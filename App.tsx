@@ -1,0 +1,93 @@
+import React, { useState, useEffect } from "react";
+import { LoginScreen } from "./components/LoginScreen";
+import { RegistrationScreen } from "./components/RegistrationScreen";
+import { Dashboard } from "./components/Dashboard";
+import { MonitorsScreen } from "./components/MonitorsScreen";
+import { SecurityScreen } from "./components/SecurityScreen";
+import { AlertsScreen } from "./components/AlertsScreen";
+import { TeamScreen } from "./components/TeamScreen";
+import { SettingsScreen } from "./components/SettingsScreen";
+import { ToastProvider } from "./components/ToastNotification";
+
+export type AppScreen =
+  | "login"
+  | "register"
+  | "dashboard"
+  | "monitors"
+  | "security"
+  | "alerts"
+  | "team"
+  | "settings";
+
+function App() {
+  const [currentScreen, setCurrentScreen] = useState<AppScreen>("login");
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  // Initialize dark mode on mount
+  useEffect(() => {
+    try {
+      document.documentElement.classList.add("dark");
+    } catch (error) {
+      console.warn("Could not set dark mode class:", error);
+    }
+  }, []);
+
+  const handleNavigation = (screen: AppScreen) => {
+    setCurrentScreen(screen);
+  };
+
+  const toggleTheme = () => {
+    setIsDarkMode(prev => {
+      const newTheme = !prev;
+      try {
+        if (newTheme) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      } catch (error) {
+        console.warn("Could not toggle theme:", error);
+      }
+      return newTheme;
+    });
+  };
+
+  const renderCurrentScreen = () => {
+    const commonProps = {
+      onNavigate: handleNavigation,
+      onToggleTheme: toggleTheme,
+      isDarkMode: isDarkMode,
+    };
+
+    switch (currentScreen) {
+      case "login":
+        return <LoginScreen {...commonProps} />;
+      case "register":
+        return <RegistrationScreen {...commonProps} />;
+      case "dashboard":
+        return <Dashboard {...commonProps} currentScreen={currentScreen} />;
+      case "monitors":
+        return <MonitorsScreen {...commonProps} currentScreen={currentScreen} />;
+      case "security":
+        return <SecurityScreen {...commonProps} currentScreen={currentScreen} />;
+      case "alerts":
+        return <AlertsScreen {...commonProps} currentScreen={currentScreen} />;
+      case "team":
+        return <TeamScreen {...commonProps} currentScreen={currentScreen} />;
+      case "settings":
+        return <SettingsScreen {...commonProps} currentScreen={currentScreen} />;
+      default:
+        return <LoginScreen {...commonProps} />;
+    }
+  };
+
+  return (
+    <ToastProvider>
+      <div className="min-h-screen">
+        {renderCurrentScreen()}
+      </div>
+    </ToastProvider>
+  );
+}
+
+export default App;
