@@ -266,7 +266,7 @@ export function AddMonitorModal({ isOpen, onClose, onAdd }: AddMonitorModalProps
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label className="text-white/90">Check Interval</Label>
-                <Select value={form.checkInterval} onValueChange={(value) => handleInputChange('checkInterval', value)}>
+                <Select value={form.checkInterval} onValueChange={(value: any) => handleInputChange('checkInterval', value)}>
                   <SelectTrigger className="glass border-white/20 text-white">
                     <SelectValue />
                   </SelectTrigger>
@@ -282,7 +282,7 @@ export function AddMonitorModal({ isOpen, onClose, onAdd }: AddMonitorModalProps
               
               <div className="space-y-2">
                 <Label className="text-white/90">Timeout</Label>
-                <Select value={form.timeout} onValueChange={(value) => handleInputChange('timeout', value)}>
+                <Select value={form.timeout} onValueChange={(value: any) => handleInputChange('timeout', value)}>
                   <SelectTrigger className="glass border-white/20 text-white">
                     <SelectValue />
                   </SelectTrigger>
@@ -350,7 +350,7 @@ export function AddMonitorModal({ isOpen, onClose, onAdd }: AddMonitorModalProps
               </div>
               <Switch
                 checked={form.alertSMS}
-                onCheckedChange={(checked) => handleInputChange('alertSMS', checked)}
+                onCheckedChange={(checked: any) => handleInputChange('alertSMS', checked)}
               />
             </div>
           </div>

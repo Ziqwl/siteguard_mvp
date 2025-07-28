@@ -1,12 +1,12 @@
 import { DashboardLayout } from './DashboardLayout';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Badge } from './ui/badge';
+import { Card } from './ui/card';
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from './ui/select';
 import { Input } from './ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { AlertTriangle, CheckCircle2, XCircle, Clock, Bell, Search, Filter } from 'lucide-react';
+import { SearchOutlined, FilterOutlined } from '@ant-design/icons';
+
 import { AppScreen } from '../App';
 import { useState } from 'react';
+import { AlertTriangle, CheckCircle2, Clock, Bell } from 'lucide-react';
 
 interface AlertsScreenProps {
   onNavigate: (screen: AppScreen) => void;
@@ -123,50 +123,54 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
         {/* Alert Stats */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Card className="glass border-white/10 animate-scale-in">
-            <CardContent className="p-4 text-center">
+            <div className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{alertCounts.total}</div>
               <p className="text-sm text-white/60">Total Alerts</p>
-            </CardContent>
+            </div>
           </Card>
           
           <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '100ms' }}>
-            <CardContent className="p-4 text-center">
+            <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.open}</div>
               <p className="text-sm text-white/60">Open</p>
-            </CardContent>
+            </div>
           </Card>
           
           <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
-            <CardContent className="p-4 text-center">
+            <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.critical}</div>
               <p className="text-sm text-white/60">Critical</p>
-            </CardContent>
+            </div>
           </Card>
           
           <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '300ms' }}>
-            <CardContent className="p-4 text-center">
+            <div className="p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">{alertCounts.resolved}</div>
               <p className="text-sm text-white/60">Resolved</p>
-            </CardContent>
+            </div>
           </Card>
         </div>
 
         {/* Filters */}
         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <div className="relative flex-1 max-w-md">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-white/50" />
-            <Input
-              placeholder="Search alerts..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 glass border-white/20 text-white placeholder:text-white/50"
-            />
+            <div className="relative">
+              <Input
+                placeholder="Search alerts..."
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+                className="glass border-white/20 text-white placeholder:text-white/50 pl-10"
+              />
+              <span className="absolute left-3 top-1/2 -translate-y-1/2 text-white/60">
+                <SearchOutlined />
+              </span>
+            </div>
           </div>
           
           <div className="flex gap-2">
             <Select value={severityFilter} onValueChange={setSeverityFilter}>
-              <SelectTrigger className="w-32 glass border-white/20 text-white">
-                <SelectValue placeholder="Severity" />
+              <SelectTrigger className="glass border-white/20 text-white">
+                <SelectValue />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Severity</SelectItem>
@@ -177,8 +181,8 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
             </Select>
             
             <Select value={statusFilter} onValueChange={setStatusFilter}>
-              <SelectTrigger className="w-32 glass border-white/20 text-white">
-                <SelectValue placeholder="Status" />
+              <SelectTrigger className="glass border-white/20 text-white">
+                <SelectValue />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="all">All Status</SelectItem>
@@ -195,16 +199,16 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
         <div className="space-y-4">
           {filteredAlerts.map((alert, index) => (
             <Card key={alert.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 50}ms` }}>
-              <CardHeader>
+              <div className="card-header">
                 <div className="flex items-start justify-between">
                   <div className="space-y-2 flex-1">
                     <div className="flex items-start gap-3">
                       {getStatusIcon(alert.status)}
                       <div className="space-y-1 flex-1">
-                        <CardTitle className="text-white">{alert.title}</CardTitle>
-                        <CardDescription className="text-white/70">
+                        <h3 className="text-white">{alert.title}</h3>
+                        <p className="text-white/70">
                           {alert.description}
-                        </CardDescription>
+                        </p>
                         <div className="flex items-center gap-3 text-sm text-white/50">
                           <span>{alert.source}</span>
                           <span>•</span>
@@ -215,49 +219,49 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
                   </div>
                   
                   <div className="flex items-center gap-2">
-                    <Badge className={`${getSeverityColor(alert.severity)} capitalize`}>
+                    <div className={`${getSeverityColor(alert.severity)} px-2.5 py-1 rounded-full text-sm capitalize`}>
                       {alert.severity}
-                    </Badge>
-                    <Badge variant="outline" className="text-white/70 border-white/20 capitalize">
+                    </div>
+                    <div className="border text-white/70 border-white/20 px-2.5 py-1 rounded-full text-sm capitalize">
                       {alert.status}
-                    </Badge>
+                    </div>
                   </div>
                 </div>
-              </CardHeader>
+              </div>
               
-              <CardContent>
+              <div className="card-body">
                 <div className="flex gap-2">
                   {alert.status === 'open' && (
                     <>
-                      <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
+                      <button className="glass border-white/20 text-white hover:bg-white/5">
                         Acknowledge
-                      </Button>
-                      <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
+                      </button>
+                      <button className="glass border-white/20 text-white hover:bg-white/5">
                         Investigate
-                      </Button>
+                      </button>
                     </>
                   )}
                   {alert.status === 'investigating' && (
-                    <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
+                    <button className="glass border-white/20 text-white hover:bg-white/5">
                       Mark Resolved
-                    </Button>
+                    </button>
                   )}
-                  <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
+                  <button className="glass border-white/20 text-white hover:bg-white/5">
                     View Details
-                  </Button>
+                  </button>
                 </div>
-              </CardContent>
+              </div>
             </Card>
           ))}
         </div>
 
         {filteredAlerts.length === 0 && (
           <Card className="glass border-white/10">
-            <CardContent className="p-8 text-center">
+            <div className="card-body p-8 text-center">
               <AlertTriangle className="h-12 w-12 text-white/30 mx-auto mb-4" />
               <h3 className="text-lg font-medium text-white mb-2">No alerts found</h3>
               <p className="text-white/60">Try adjusting your filters or search terms.</p>
-            </CardContent>
+            </div>
           </Card>
         )}
       </div>
