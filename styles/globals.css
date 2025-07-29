@@ -2,19 +2,19 @@
   .btn-primary {
     background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
     color: var(--primary-foreground);
-    border: 2px solid var(--accent-teal);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 16px 0 rgba(94, 234, 212, 0.18);
+    border: 2.5px solid var(--accent-teal);
+    border-radius: calc(var(--radius) + 0.25rem);
+    box-shadow: 0 6px 24px 0 rgba(94, 234, 212, 0.22), 0 1.5px 0 var(--accent-teal) inset;
     font-weight: var(--font-weight-bold);
-    padding: 0.85em 1.7em;
-    font-size: 1.1em;
-    letter-spacing: 0.01em;
+    padding: 1em 2em;
+    font-size: 1.15em;
+    letter-spacing: 0.02em;
     transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
   }
   .btn-primary:hover, .btn-primary:focus {
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-teal));
     border-color: var(--accent-purple);
-    box-shadow: 0 6px 24px 0 rgba(167, 139, 250, 0.22);
+    box-shadow: 0 10px 32px 0 rgba(167, 139, 250, 0.28);
   }
   .btn-primary:active {
     background: var(--accent-purple);
@@ -22,19 +22,21 @@
     box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.12);
   }
   .btn-secondary {
-    background: rgba(167, 139, 250, 0.08);
+    background: rgba(167, 139, 250, 0.12);
     color: var(--accent-purple);
     border: 2px solid var(--accent-purple);
-    border-radius: var(--radius);
+    border-radius: calc(var(--radius) + 0.25rem);
     font-weight: var(--font-weight-semibold);
-    padding: 0.75em 1.5em;
-    font-size: 1em;
+    padding: 0.85em 1.7em;
+    font-size: 1.05em;
+    box-shadow: 0 2px 12px 0 rgba(167, 139, 250, 0.14);
     transition: border-color 0.2s, color 0.2s, background 0.2s;
   }
   .btn-secondary:hover, .btn-secondary:focus {
     background: var(--accent-purple);
     color: var(--accent-foreground);
     border-color: var(--accent-teal);
+    box-shadow: 0 6px 24px 0 rgba(167, 139, 250, 0.22);
   }
   .btn-secondary:active {
     background: var(--accent-teal);
@@ -58,16 +60,16 @@
     color: var(--accent-foreground);
   }
   .card {
-    background: var(--glass-bg);
-    border-radius: var(--radius);
-    box-shadow: 0 2px 16px 0 rgba(30, 27, 75, 0.12);
-    border: 1px solid var(--glass-border);
-    padding: 2rem;
+    background: linear-gradient(120deg, var(--glass-bg) 0%, var(--accent-teal) 100%);
+    border-radius: calc(var(--radius) + 0.5rem);
+    box-shadow: 0 8px 32px 0 rgba(30, 27, 75, 0.18), 0 1.5px 0 var(--accent-teal) inset;
+    border: 2px solid var(--glass-border);
+    padding: 2.5rem 2.2rem;
     transition: box-shadow 0.2s, background 0.2s;
   }
   .card:hover {
-    box-shadow: 0 6px 32px 0 rgba(94, 234, 212, 0.18);
-    background: var(--glass-mobile);
+    box-shadow: 0 14px 48px 0 rgba(94, 234, 212, 0.28);
+    background: linear-gradient(120deg, var(--glass-mobile) 0%, var(--accent-teal) 100%);
   }
   .popover {
     background: var(--popover);
@@ -84,11 +86,12 @@
     box-shadow: 0 4px 24px 0 rgba(94, 234, 212, 0.18);
   }
   .accent-line {
-    height: 4px;
+    height: 5px;
     width: 100%;
     background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
-    border-radius: 2px;
-    margin-bottom: 1rem;
+    border-radius: 3px;
+    margin: 2rem 0;
+    box-shadow: 0 1px 8px var(--accent-teal);
   }
 }
 @layer utilities {
