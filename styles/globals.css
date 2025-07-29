@@ -1,16 +1,150 @@
 @layer utilities {
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
+    color: var(--primary-foreground);
+    border: 2px solid var(--accent-teal);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 16px 0 rgba(94, 234, 212, 0.18);
+    font-weight: var(--font-weight-bold);
+    padding: 0.85em 1.7em;
+    font-size: 1.1em;
+    letter-spacing: 0.01em;
+    transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, var(--accent-purple), var(--accent-teal));
+    border-color: var(--accent-purple);
+    box-shadow: 0 6px 24px 0 rgba(167, 139, 250, 0.22);
+  }
+  .btn-primary:active {
+    background: var(--accent-purple);
+    border-color: var(--accent-teal);
+    box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.12);
+  }
+  .btn-secondary {
+    background: rgba(167, 139, 250, 0.08);
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    border-radius: var(--radius);
+    font-weight: var(--font-weight-semibold);
+    padding: 0.75em 1.5em;
+    font-size: 1em;
+    transition: border-color 0.2s, color 0.2s, background 0.2s;
+  }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background: var(--accent-purple);
+    color: var(--accent-foreground);
+    border-color: var(--accent-teal);
+  }
+  .btn-secondary:active {
+    background: var(--accent-teal);
+    color: var(--primary-foreground);
+    border-color: var(--accent-purple);
+  }
+  .btn-tertiary {
+    background: none;
+    color: var(--accent-teal);
+    border: none;
+    font-weight: var(--font-weight-medium);
+    padding: 0.75em 1.2em;
+    font-size: 1em;
+    transition: color 0.2s;
+  }
+  .btn-tertiary:hover, .btn-tertiary:focus {
+    color: var(--accent-purple);
+    text-decoration: underline;
+  }
+  .btn-tertiary:active {
+    color: var(--accent-foreground);
+  }
+  .card {
+    background: var(--glass-bg);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 16px 0 rgba(30, 27, 75, 0.12);
+    border: 1px solid var(--glass-border);
+    padding: 2rem;
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  .card:hover {
+    box-shadow: 0 6px 32px 0 rgba(94, 234, 212, 0.18);
+    background: var(--glass-mobile);
+  }
+  .popover {
+    background: var(--popover);
+    color: var(--popover-foreground);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 16px 0 rgba(30, 27, 75, 0.12);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    transition: box-shadow 0.2s, background 0.2s;
+  }
+  .popover-accent {
+    background: linear-gradient(135deg, var(--accent-teal) 0%, var(--accent-purple) 100%);
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 24px 0 rgba(94, 234, 212, 0.18);
+  }
+  .accent-line {
+    height: 4px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
+    border-radius: 2px;
+    margin-bottom: 1rem;
+  }
+}
+@layer utilities {
   .border-border {
     border-color: theme('colors.border');
   }
 }
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-@custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+  .btn-primary {
+    background: var(--accent-teal);
+    color: var(--primary-foreground);
+    border: 2px solid var(--accent-teal);
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.15);
+    font-weight: var(--font-weight-semibold);
+    transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+    padding: 0.75em 1.5em;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
+    border-color: var(--accent-purple);
+    box-shadow: 0 4px 16px 0 rgba(167, 139, 250, 0.18);
+  }
+  .btn-primary:active {
+    background: var(--accent-purple);
+    border-color: var(--accent-teal);
+    box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.12);
+  }
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent-purple);
+    border: 2px solid var(--accent-purple);
+    border-radius: var(--radius);
+    font-weight: var(--font-weight-medium);
+    transition: border-color 0.2s, color 0.2s;
+    padding: 0.75em 1.5em;
+  }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background: var(--accent-purple);
+    color: var(--accent-foreground);
+    border-color: var(--accent-teal);
+  }
+  .btn-secondary:active {
+    background: var(--accent-teal);
+    color: var(--primary-foreground);
+    border-color: var(--accent-purple);
+  }
+}
 
 :root {
   /* Typography */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-size: 16px;
+  --font-size: 18px;
   --text-xs: 0.75rem;    /* 12px */
   --text-sm: 0.875rem;   /* 14px */
   --text-base: 1rem;     /* 16px */
@@ -60,7 +194,10 @@
   --accent-foreground: #1e1b4b;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.08);
+  --border: #5eead4; /* Яркая рамка, как акцент */
+  .border-solid {
+    border-style: solid;
+  }
   --input: rgba(255, 255, 255, 0.04);
   --input-background: rgba(255, 255, 255, 0.04);
   --switch-background: rgba(255, 255, 255, 0.15);

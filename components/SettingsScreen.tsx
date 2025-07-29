@@ -38,9 +38,9 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-6">
+      <div className="space-y-8 md:space-y-12 px-4 md:px-8 lg:px-16">
         {/* Profile Settings */}
-        <Card className="glass border-white/10 animate-scale-in">
+        <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]">
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
               <User className="h-5 w-5 text-primary" />
@@ -50,14 +50,14 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               Manage your personal information
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="space-y-6 md:space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-2">
                 <Label htmlFor="firstName" className="text-white/90">First Name</Label>
                 <Input
                   id="firstName"
                   defaultValue="John"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
               <div className="space-y-2">
@@ -65,7 +65,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 <Input
                   id="lastName"
                   defaultValue="Doe"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
             </div>
@@ -76,7 +76,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 id="email"
                 type="email"
                 defaultValue="john.doe@example.com"
-                className="glass border-white/20 text-white placeholder:text-white/50"
+                className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
               />
             </div>
             
@@ -85,11 +85,11 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <Input
                 id="company"
                 defaultValue="Acme Corp"
-                className="glass border-white/20 text-white placeholder:text-white/50"
+                className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
               />
             </div>
             
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-[var(--spacing-6)] py-[var(--spacing-2)] rounded-[var(--radius)]">
               <Save className="h-4 w-4 mr-2" />
               Save Changes
             </Button>
@@ -97,7 +97,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </Card>
 
         {/* Notification Settings */}
-        <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '100ms' }}>
+        <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]" style={{ animationDelay: '100ms' }}>
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
               <Bell className="h-5 w-5 text-primary" />
@@ -107,8 +107,8 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               Configure how you receive notifications
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
+          <CardContent className="space-y-8 md:space-y-10">
+            <div className="space-y-6 md:space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">Email Notifications</div>
@@ -144,7 +144,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             
             <Separator className="bg-white/10" />
             
-            <div className="space-y-4">
+            <div className="space-y-6 md:space-y-8">
               <div className="space-y-2">
                 <Label className="text-white/90">Notification Frequency</Label>
                 <Select defaultValue="immediate">
@@ -164,7 +164,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 <Input
                   id="phone"
                   placeholder="+1 (555) 123-4567"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
             </div>
@@ -172,7 +172,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </Card>
 
         {/* Security Settings */}
-        <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
+        <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]" style={{ animationDelay: '200ms' }}>
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
               <Shield className="h-5 w-5 text-primary" />
@@ -182,8 +182,8 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               Manage your account security
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
+          <CardContent className="space-y-8 md:space-y-10">
+            <div className="space-y-6 md:space-y-8">
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">Two-Factor Authentication</div>
@@ -215,14 +215,14 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             
             <Separator className="bg-white/10" />
             
-            <div className="space-y-4">
+            <div className="space-y-6 md:space-y-8">
               <h4 className="font-medium text-white">Change Password</h4>
               <div className="space-y-2">
                 <Label htmlFor="currentPassword" className="text-white/90">Current Password</Label>
                 <Input
                   id="currentPassword"
                   type="password"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
               <div className="space-y-2">
@@ -230,7 +230,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 <Input
                   id="newPassword"
                   type="password"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
               <div className="space-y-2">
@@ -238,10 +238,10 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 <Input
                   id="confirmPassword"
                   type="password"
-                  className="glass border-white/20 text-white placeholder:text-white/50"
+                  className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
               </div>
-              <Button variant="outline" className="glass border-white/20 text-white hover:bg-white/5">
+              <Button variant="outline" className="glass border-white/20 text-white hover:bg-white/5 px-[var(--spacing-6)] py-[var(--spacing-2)] rounded-[var(--radius)]">
                 Update Password
               </Button>
             </div>
@@ -249,7 +249,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </Card>
 
         {/* Monitoring Settings */}
-        <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '300ms' }}>
+        <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]" style={{ animationDelay: '300ms' }}>
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
               <Globe className="h-5 w-5 text-primary" />
@@ -259,8 +259,8 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               Configure monitoring preferences
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="space-y-6 md:space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-2">
                 <Label className="text-white/90">Check Interval</Label>
                 <Select defaultValue="5min">
@@ -314,7 +314,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </Card>
 
         {/* API Settings */}
-        <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '400ms' }}>
+        <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]" style={{ animationDelay: '400ms' }}>
           <CardHeader>
             <CardTitle className="text-white flex items-center gap-2">
               <Key className="h-5 w-5 text-primary" />
@@ -324,16 +324,16 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               Manage API keys and webhooks
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-6 md:space-y-8">
             <div className="space-y-2">
               <Label className="text-white/90">API Key</Label>
               <div className="flex gap-2">
                 <Input
                   readOnly
                   value="sk_test_4eC39HqLyjWDarjtT1zdp7dc"
-                  className="glass border-white/20 text-white placeholder:text-white/50 font-mono"
+                  className="glass border-white/20 text-white placeholder:text-white/50 font-mono px-[var(--spacing-4)] py-[var(--spacing-2)]"
                 />
-                <Button variant="outline" className="glass border-white/20 text-white hover:bg-white/5">
+                <Button variant="outline" className="glass border-white/20 text-white hover:bg-white/5 px-[var(--spacing-6)] py-[var(--spacing-2)] rounded-[var(--radius)]">
                   Regenerate
                 </Button>
               </div>
@@ -344,7 +344,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <Input
                 id="webhook"
                 placeholder="https://your-site.com/webhook"
-                className="glass border-white/20 text-white placeholder:text-white/50"
+                className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
               />
             </div>
             
@@ -353,11 +353,11 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <Input
                 id="webhookSecret"
                 type="password"
-                className="glass border-white/20 text-white placeholder:text-white/50"
+                className="glass border-white/20 text-white placeholder:text-white/50 px-[var(--spacing-4)] py-[var(--spacing-2)]"
               />
             </div>
             
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-[var(--spacing-6)] py-[var(--spacing-2)] rounded-[var(--radius)]">
               <Save className="h-4 w-4 mr-2" />
               Save API Settings
             </Button>
