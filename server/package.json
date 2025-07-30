@@ -1,0 +1,21 @@
+{
+  "name": "siteguard-api",
+  "version": "1.0.0",
+  "description": "SiteGuard API Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["monitoring", "security", "api", "express"],
+  "author": "SiteGuard Team",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+} 

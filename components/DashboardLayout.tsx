@@ -63,10 +63,13 @@ export function DashboardLayout({
   const sidebarItems = [
     { icon: BarChart3, label: 'Dashboard', screen: 'dashboard' as AppScreen, disabled: false },
     { icon: Globe, label: 'Monitors', screen: 'monitors' as AppScreen, disabled: false },
-    { icon: Shield, label: 'Security', screen: 'security' as AppScreen, disabled: false },
     { icon: AlertTriangle, label: 'Alerts', screen: 'alerts' as AppScreen, disabled: false },
+    { icon: Activity, label: 'Chaos Experiments', screen: 'chaos-experiments' as AppScreen, disabled: false },
+    { icon: Shield, label: 'AI Insights', screen: 'ai-insights' as AppScreen, disabled: false },
+    { icon: Settings, label: 'Tools', screen: 'tools' as AppScreen, disabled: false },
     { icon: Users, label: 'Team', screen: 'team' as AppScreen, disabled: false },
     { icon: Settings, label: 'Settings', screen: 'settings' as AppScreen, disabled: false },
+    // Coming soon features
     { icon: Activity, label: 'AI Postmortems', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - AI-powered incident analysis' },
     { icon: Shield, label: 'Drift Correction', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated security drift detection' },
     { icon: Settings, label: 'Runbooks', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated incident response playbooks' }
