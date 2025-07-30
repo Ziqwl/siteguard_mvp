@@ -137,35 +137,35 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               key={index} 
               className={`
                 glass border-white/10 hover:border-white/20 transition-all duration-300 
-                animate-scale-in group cursor-pointer hover:shadow-2xl hover:shadow-black/20
+                animate-fade-in-scale group cursor-pointer hover:shadow-2xl hover:shadow-black/20
                 hover:scale-[1.02] active:scale-[0.98] overflow-hidden
                 ${metric.borderColor}
               `}
-              style={{ animationDelay: `${index * 100}ms` }}
+              style={{ animationDelay: `${index * 150}ms` }}
               onClick={metric.onClick}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-5 group-hover:opacity-10 transition-opacity`} />
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2 relative z-10">
-                <CardTitle className="text-sm lg:text-base font-medium text-white/80 group-hover:text-white transition-colors">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
+                <CardTitle className="text-sm lg:text-base font-semibold text-white/90 group-hover:text-white transition-colors">
                   {metric.title}
                 </CardTitle>
                 <div className={`
-                  p-3 lg:p-4 rounded-xl ${metric.bgColor} 
+                  p-4 lg:p-5 rounded-2xl ${metric.bgColor} 
                   group-hover:scale-110 transition-transform ring-1 ring-white/20
-                  shadow-lg shadow-black/10
+                  shadow-xl shadow-black/20 backdrop-blur-sm
                 `}>
-                  <metric.icon className={`h-5 w-5 lg:h-6 lg:w-6 ${metric.color}`} />
+                  <metric.icon className={`h-6 w-6 lg:h-7 lg:w-7 ${metric.color}`} />
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3 relative z-10">
-                <div className="flex items-baseline gap-2">
-                  <div className="text-3xl lg:text-4xl font-bold text-white group-hover:text-primary transition-colors">
+              <CardContent className="space-y-4 relative z-10">
+                <div className="flex items-baseline gap-3">
+                  <div className="text-4xl lg:text-5xl font-bold text-white group-hover:text-primary transition-colors">
                     {metric.value}
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-white/40 group-hover:text-primary transition-colors" />
+                  <ArrowUpRight className="h-6 w-6 text-white/40 group-hover:text-primary transition-colors" />
                 </div>
-                <div className="flex items-center gap-2 text-xs lg:text-sm text-emerald-400">
-                  <TrendingUp className="h-4 w-4" />
+                <div className="flex items-center gap-2 text-sm lg:text-base text-emerald-400 font-medium">
+                  <TrendingUp className="h-5 w-5" />
                   <span>{metric.change} from last month</span>
                 </div>
               </CardContent>

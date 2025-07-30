@@ -124,14 +124,14 @@ export function DashboardLayout({
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
                     className={`
-                      w-full flex items-center gap-3 lg:gap-4 px-4 lg:px-5 py-4 lg:py-4.5 
+                      w-full flex items-center gap-3 lg:gap-4 px-5 lg:px-6 py-5 lg:py-6 
                       rounded-2xl text-left transition-all duration-300 ease-out
-                      touch-manipulation min-h-[52px] lg:min-h-[56px]
+                      touch-manipulation min-h-[56px] lg:min-h-[60px]
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                          ? 'bg-gradient-to-r from-primary/20 to-accent/20 text-white border border-primary/30 shadow-lg shadow-primary/20' 
-                          : 'text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-white/5 hover:to-white/10 hover:shadow-lg hover:shadow-white/5'
+                          ? 'bg-gradient-to-r from-primary/25 to-accent/25 text-white border border-primary/40 shadow-xl shadow-primary/25 backdrop-blur-sm' 
+                          : 'text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 hover:shadow-lg hover:shadow-white/10 hover:backdrop-blur-sm'
                       }
                     `}
                   >
