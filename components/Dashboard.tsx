@@ -112,8 +112,8 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
     >
       <div className="space-y-6 lg:space-y-8">
         {/* Quick Actions */}
-        <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 items-stretch sm:items-center justify-between">
-          <div className="flex flex-col xs:flex-row gap-2 lg:gap-3 flex-1">
+        <div className="flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
+          <div className="flex flex-col xs:flex-row gap-3 flex-1">
             <Button
               variant="outline"
               onClick={handleRefresh}
@@ -125,48 +125,37 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
             </Button>
           </div>
           
-          <div className="text-xs lg:text-sm text-white/60 text-center sm:text-right">
+          <div className="text-sm text-gray-400 text-center sm:text-right">
             Last updated: {new Date().toLocaleTimeString()}
           </div>
         </div>
 
-        {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+                {/* Metrics Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {metrics.map((metric, index) => (
             <Card 
               key={index} 
-              className={`
-                glass border-white/10 hover:border-white/20 transition-all duration-300 
-                animate-fade-in-scale group cursor-pointer hover:shadow-2xl hover:shadow-black/20
-                hover:scale-[1.02] active:scale-[0.98] overflow-hidden
-                ${metric.borderColor}
-              `}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="card group cursor-pointer hover:scale-[1.02] transition-all duration-200"
+              style={{ animationDelay: `${index * 100}ms` }}
               onClick={metric.onClick}
             >
-                                                             <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-5 group-hover:opacity-10 transition-opacity`} />
-              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
-                <CardTitle className="text-sm lg:text-base font-semibold text-white/90 group-hover:text-white transition-colors">
+              <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+                <CardTitle className="text-sm font-medium text-white">
                   {metric.title}
                 </CardTitle>
-                <div className={`
-                  p-4 lg:p-5 rounded-2xl ${metric.bgColor} 
-                  group-hover:scale-110 transition-transform ring-1 ring-white/20
-                  shadow-xl shadow-black/20 backdrop-blur-sm
-                                     group-hover:shadow-lg group-hover:shadow-blue-500/20
-                `}>
-                                     <metric.icon className={`h-6 w-6 lg:h-7 lg:w-7 ${metric.color}`} />
+                <div className="p-3 rounded-lg bg-gray-800/50">
+                  <metric.icon className={`h-5 w-5 ${metric.color}`} />
                 </div>
               </CardHeader>
-              <CardContent className="space-y-4 relative z-10">
-                <div className="flex items-baseline gap-3">
-                  <div className="text-3xl lg:text-4xl font-bold text-white group-hover:text-primary transition-colors">
+              <CardContent className="space-y-3">
+                <div className="flex items-baseline gap-2">
+                  <div className="text-2xl font-bold text-white">
                     {metric.value}
                   </div>
-                  <ArrowUpRight className="h-5 w-5 text-white/40 group-hover:text-primary transition-colors" />
+                  <ArrowUpRight className="h-4 w-4 text-gray-400" />
                 </div>
                 <div className="flex items-center gap-2 text-sm text-emerald-400 font-medium">
-                  <TrendingUp className="h-4 w-4" />
+                  <TrendingUp className="h-3 w-3" />
                   <span className="truncate">{metric.change} from last month</span>
                 </div>
               </CardContent>
@@ -175,52 +164,52 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '500ms' }}>
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+          <Card className="card" style={{ animationDelay: '500ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">Quick Stats</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/70">Avg Response Time</span>
+                <span className="text-sm text-gray-400">Avg Response Time</span>
                 <span className="text-sm font-semibold text-white">125ms</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/70">Total Requests</span>
+                <span className="text-sm text-gray-400">Total Requests</span>
                 <span className="text-sm font-semibold text-white">2.4M</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/70">Error Rate</span>
+                <span className="text-sm text-gray-400">Error Rate</span>
                 <span className="text-sm font-semibold text-emerald-400">0.02%</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-white/70">Security Score</span>
+                <span className="text-sm text-gray-400">Security Score</span>
                 <span className="text-sm font-semibold text-primary">A+</span>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '600ms' }}>
+          <Card className="card" style={{ animationDelay: '600ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">System Status</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span className="text-sm text-white/70">All systems operational</span>
+                <span className="text-sm text-gray-400">All systems operational</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                <span className="text-sm text-white/70">Monitoring active</span>
+                <span className="text-sm text-gray-400">Monitoring active</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span className="text-sm text-white/70">Security enabled</span>
+                <span className="text-sm text-gray-400">Security enabled</span>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '700ms' }}>
+          <Card className="card" style={{ animationDelay: '700ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">Recent Activity</CardTitle>
             </CardHeader>

@@ -253,41 +253,41 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
 
         {/* Stats Cards - Responsive Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 xl:gap-6">
-          <Card className="glass border-white/10 animate-scale-in">
+          <Card className="card">
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-white">{stats.total}</div>
-              <p className="text-xs lg:text-sm text-white/60">Total</p>
+              <p className="text-xs lg:text-sm text-gray-400">Total</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '100ms' }}>
+          <Card className="card" style={{ animationDelay: '100ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-emerald-400">{stats.online}</div>
-              <p className="text-xs lg:text-sm text-white/60">Online</p>
+              <p className="text-xs lg:text-sm text-gray-400">Online</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
+          <Card className="card" style={{ animationDelay: '200ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-amber-400">{stats.warning}</div>
-              <p className="text-xs lg:text-sm text-white/60">Warning</p>
+              <p className="text-xs lg:text-sm text-gray-400">Warning</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '300ms' }}>
+          <Card className="card" style={{ animationDelay: '300ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-red-400">{stats.offline}</div>
-              <p className="text-xs lg:text-sm text-white/60">Offline</p>
+              <p className="text-xs lg:text-sm text-gray-400">Offline</p>
             </CardContent>
           </Card>
         </div>
 
         {/* Monitors Grid - Responsive */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
           {filteredMonitors.map((monitor, index) => (
             <Card 
               key={monitor.id} 
-              className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-scale-in cursor-pointer group hover:shadow-2xl hover:shadow-black/20 hover:scale-[1.02] active:scale-[0.98] touch-manipulation"
+              className="card group cursor-pointer hover:scale-[1.02] transition-all duration-200"
               style={{ animationDelay: `${index * 50}ms` }}
               onClick={() => handleMonitorClick(monitor)}
             >
