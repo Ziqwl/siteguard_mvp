@@ -24,10 +24,30 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!email || !password) {
+    // Enhanced validation
+    if (!email.trim()) {
       addToast({
         type: 'error',
-        title: 'Please fill in all fields'
+        title: 'Email required',
+        description: 'Please enter your email address'
+      });
+      return;
+    }
+    
+    if (!password.trim()) {
+      addToast({
+        type: 'error',
+        title: 'Password required',
+        description: 'Please enter your password'
+      });
+      return;
+    }
+    
+    if (password.length < 6) {
+      addToast({
+        type: 'error',
+        title: 'Invalid password',
+        description: 'Password must be at least 6 characters'
       });
       return;
     }
@@ -35,7 +55,10 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
     setIsLoading(true);
     
     try {
-      // Simulate login
+      // Simulate API call with proper data structure
+      const loginData = { email: email.trim(), password };
+      console.log('Login attempt:', { email: loginData.email, password: '***' });
+      
       await new Promise(resolve => setTimeout(resolve, 1500));
       addToast({
         type: 'success',
@@ -47,7 +70,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
       addToast({
         type: 'error',
         title: 'Login failed',
-        description: 'Please check your credentials'
+        description: 'Please check your credentials and try again'
       });
     } finally {
       setIsLoading(false);

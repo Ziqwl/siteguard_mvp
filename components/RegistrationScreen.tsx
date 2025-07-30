@@ -26,10 +26,30 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.email || !formData.password) {
+    // Enhanced validation
+    if (!formData.email.trim()) {
       addToast({
         type: 'error',
-        title: 'Please fill in all required fields'
+        title: 'Email required',
+        description: 'Please enter your email address'
+      });
+      return;
+    }
+    
+    if (!formData.password.trim()) {
+      addToast({
+        type: 'error',
+        title: 'Password required',
+        description: 'Please enter a password'
+      });
+      return;
+    }
+    
+    if (formData.password.length < 6) {
+      addToast({
+        type: 'error',
+        title: 'Password too short',
+        description: 'Password must be at least 6 characters'
       });
       return;
     }
@@ -37,7 +57,8 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
     if (formData.password !== formData.confirmPassword) {
       addToast({
         type: 'error',
-        title: 'Passwords do not match'
+        title: 'Passwords do not match',
+        description: 'Please make sure both passwords are identical'
       });
       return;
     }
@@ -45,6 +66,13 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
     setIsLoading(true);
     
     try {
+      // Simulate API call with proper data structure
+      const registerData = { 
+        email: formData.email.trim(), 
+        password: formData.password 
+      };
+      console.log('Registration attempt:', { email: registerData.email, password: '***' });
+      
       await new Promise(resolve => setTimeout(resolve, 1500));
       addToast({
         type: 'success',
