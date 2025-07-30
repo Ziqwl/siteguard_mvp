@@ -96,7 +96,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen flex flex-col bg-[#0A0A0A]">
       {/* Theme toggle */}
       <div className="absolute top-4 right-4 z-10">
         <div className="flex items-center gap-2 lg:gap-3">

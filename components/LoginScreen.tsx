@@ -78,26 +78,26 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-[#0A0A0A]">
       {/* Left side - Branding (hidden on mobile) */}
       <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 p-8 xl:p-12 items-center justify-center relative overflow-hidden">
         <div className="relative z-10 max-w-md text-center">
-          <div className="inline-flex items-center justify-center w-20 h-20 xl:w-24 xl:h-24 rounded-2xl xl:rounded-3xl bg-primary/20 ring-1 ring-primary/30 mb-8">
-            <Shield className="w-10 h-10 xl:w-12 xl:h-12 text-primary" />
+          <div className="inline-flex items-center justify-center w-16 h-16 xl:w-20 xl:h-20 rounded-xl xl:rounded-2xl bg-blue-500/10 ring-1 ring-blue-500/20 mb-8">
+            <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-blue-400" />
           </div>
           
-          <h1 className="text-3xl xl:text-4xl font-bold text-white mb-4">
+          <h1 className="text-2xl xl:text-3xl font-bold text-white mb-4">
             Welcome to SiteGuard
           </h1>
           
-          <p className="text-lg xl:text-xl text-white/70 mb-8">
+          <p className="text-base xl:text-lg text-gray-400 mb-8">
             Comprehensive website security monitoring and threat detection platform
           </p>
         </div>
       </div>
 
       {/* Right side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 xl:p-12">
+      <div className="flex-1 flex items-center justify-center p-6 sm:p-8 lg:p-12">
         <div className="w-full max-w-md space-y-6 lg:space-y-8">
           {/* Theme toggle */}
           <div className="flex justify-end">
@@ -121,20 +121,20 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
 
           {/* Mobile branding */}
           <div className="text-center lg:hidden">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-primary/20 ring-1 ring-primary/30 mb-4">
-              <Shield className="w-8 h-8 text-primary" />
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-500/10 ring-1 ring-blue-500/20 mb-4">
+              <Shield className="w-8 h-8 text-blue-400" />
             </div>
             <h1 className="text-2xl font-bold text-white mb-2">SiteGuard</h1>
-            <p className="text-white/60">Secure your digital presence</p>
+            <p className="text-gray-400">Secure your digital presence</p>
           </div>
 
           {/* Login Card */}
-          <Card className="glass-strong border-white/20 shadow-2xl">
+          <Card className="card">
             <CardHeader className="space-y-2 pb-6">
               <CardTitle className="text-2xl lg:text-3xl font-bold text-white text-center">
                 Sign In
               </CardTitle>
-              <CardDescription className="text-white/70 text-center text-base">
+              <CardDescription className="text-gray-400 text-center text-base">
                 Access your security dashboard
               </CardDescription>
             </CardHeader>
@@ -143,16 +143,16 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
               <form onSubmit={handleLogin} className="space-y-5 lg:space-y-6">
                 {/* Email Field */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white/90">Username or Email</Label>
+                  <Label htmlFor="email" className="text-white">Username or Email</Label>
                   <div className="relative">
-                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50" />
+                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <Input
                       id="email"
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com or username"
-                      className="pl-10 h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
+                      className="pl-10 h-11 bg-[#1A1A1A] border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
                       disabled={isLoading}
                     />
                   </div>
@@ -160,16 +160,16 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
 
                 {/* Password Field */}
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-white/90">Password</Label>
+                  <Label htmlFor="password" className="text-white">Password</Label>
                   <div className="relative">
-                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50" />
+                    <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <Input
                       id="password"
                       type={showPassword ? 'text' : 'password'}
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter your password"
-                      className="pl-10 pr-12 h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
+                      className="pl-10 pr-12 h-11 bg-[#1A1A1A] border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
                       disabled={isLoading}
                     />
                     <Button
@@ -189,17 +189,17 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="w-full h-12 lg:h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base"
+                  className="btn-primary w-full"
                 >
                   {isLoading ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-current border-t-transparent rounded-full animate-spin mr-2" />
+                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
                       Signing in...
                     </>
                   ) : (
                     <>
                       Sign In
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" />
                     </>
                   )}
                 </Button>
