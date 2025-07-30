@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { LoginScreen } from "./components/LoginScreen";
 import { RegistrationScreen } from "./components/RegistrationScreen";
+import { DocsPage } from "./components/DocsPage";
 import { Dashboard } from "./components/Dashboard";
 import { MonitorsScreen } from "./components/MonitorsScreen";
 import { SecurityScreen } from "./components/SecurityScreen";
@@ -12,6 +13,7 @@ import { ToastProvider } from "./components/ToastNotification";
 export type AppScreen =
   | "login"
   | "register"
+  | "docs"
   | "dashboard"
   | "monitors"
   | "security"
@@ -64,6 +66,8 @@ function App() {
         return <LoginScreen {...commonProps} />;
       case "register":
         return <RegistrationScreen {...commonProps} />;
+      case "docs":
+        return <DocsPage {...commonProps} />;
       case "dashboard":
         return <Dashboard {...commonProps} currentScreen={currentScreen} />;
       case "monitors":
