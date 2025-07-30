@@ -178,13 +178,13 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
               <h1 className="text-3xl font-bold text-white mb-2">AI Insights</h1>
               <p className="text-white/70">Predictive analytics and intelligent recommendations</p>
             </div>
-            <Button 
-              className="btn-primary shadow-lg shadow-[#39FF14]/30"
-              onClick={() => {/* TODO: Refresh insights */}}
-            >
-              <Brain className="h-4 w-4 mr-2 drop-shadow-lg" />
-              Refresh Analysis
-            </Button>
+                          <Button 
+                className="btn-primary"
+                onClick={() => {/* TODO: Refresh insights */}}
+              >
+                <Brain className="h-4 w-4 mr-2" />
+                Refresh Analysis
+              </Button>
           </div>
           
           {/* Stats Cards */}
@@ -196,9 +196,9 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                     <p className="text-sm text-white/70">Active Insights</p>
                     <p className="text-2xl font-bold text-white">{activeInsights.length}</p>
                   </div>
-                  <div className="p-3 rounded-full bg-[#39FF14]/20 shadow-lg shadow-[#39FF14]/20">
-                    <Brain className="h-6 w-6 text-[#39FF14] drop-shadow-lg" />
-                  </div>
+                                     <div className="p-3 rounded-full bg-[#10B981]/20">
+                     <Brain className="h-6 w-6 text-[#10B981]" />
+                   </div>
                 </div>
               </CardContent>
             </Card>
@@ -301,9 +301,9 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                       <Button 
                         size="sm"
                         onClick={() => resolveInsight(insight.id)}
-                        className="bg-[#39FF14] hover:bg-[#39FF14]/80 text-black font-semibold shadow-lg shadow-[#39FF14]/30"
+                        className="bg-green-600 hover:bg-green-700"
                       >
-                        <CheckCircle className="h-4 w-4 mr-1 drop-shadow-lg" />
+                        <CheckCircle className="h-4 w-4 mr-1" />
                         Resolve
                       </Button>
                     )}
@@ -330,7 +330,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                     <span className="text-sm text-white/70">Confidence Level</span>
                     <span className="text-sm text-white">{insight.confidence}%</span>
                   </div>
-                  <Progress value={insight.confidence} className="h-2 bg-[#39FF14]/20" />
+                  <Progress value={insight.confidence} className="h-2" />
                 </div>
               </CardContent>
             </Card>
