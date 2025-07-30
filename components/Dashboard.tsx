@@ -24,10 +24,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+0.1%',
       trend: 'up',
       icon: Activity,
-                 color: 'text-[#10B981]',
-           bgColor: 'bg-gradient-to-br from-[#10B981]/30 to-[#10B981]/20',
-           borderColor: 'border-[#10B981]/40',
-           gradient: 'from-[#10B981] to-[#10B981]',
+                 color: 'text-emerald-400',
+           bgColor: 'bg-gradient-to-br from-emerald-400/30 to-emerald-500/20',
+           borderColor: 'border-emerald-400/40',
+           gradient: 'from-emerald-400 to-emerald-500',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -36,10 +36,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+3',
       trend: 'up',
       icon: Globe,
-                 color: 'text-[#3B82F6]',
-           bgColor: 'bg-gradient-to-br from-[#3B82F6]/30 to-[#3B82F6]/20',
-           borderColor: 'border-[#3B82F6]/40',
-           gradient: 'from-[#3B82F6] to-[#3B82F6]',
+                 color: 'text-blue-400',
+           bgColor: 'bg-gradient-to-br from-blue-400/30 to-blue-500/20',
+           borderColor: 'border-blue-400/40',
+           gradient: 'from-blue-400 to-blue-500',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -48,10 +48,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+12',
       trend: 'up',
       icon: Shield,
-                 color: 'text-[#F59E0B]',
-           bgColor: 'bg-gradient-to-br from-[#F59E0B]/30 to-[#F59E0B]/20',
-           borderColor: 'border-[#F59E0B]/40',
-           gradient: 'from-[#F59E0B] to-[#F59E0B]',
+                 color: 'text-orange-400',
+           bgColor: 'bg-gradient-to-br from-orange-400/30 to-orange-500/20',
+           borderColor: 'border-orange-400/40',
+           gradient: 'from-orange-400 to-orange-500',
       onClick: () => onNavigate('security')
     }
   ];
@@ -118,9 +118,9 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               variant="outline"
               onClick={handleRefresh}
               disabled={isRefreshing}
-              className="glass border-white/20 text-white hover:bg-white/5"
+              className="btn-secondary"
             >
-              <RefreshCw className={`h-4 w-4 mr-2 ${isRefreshing ? 'animate-spin' : ''}`} />
+              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
               {isRefreshing ? 'Refreshing...' : 'Refresh'}
             </Button>
           </div>

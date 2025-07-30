@@ -154,8 +154,8 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
             />
           </div>
           
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <UserPlus className="h-4 w-4 mr-2" />
+          <Button className="btn-primary">
+            <UserPlus className="h-4 w-4" />
             Invite Member
           </Button>
         </div>
@@ -227,7 +227,7 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
                 <option value="editor" className="bg-background">Editor</option>
                 <option value="admin" className="bg-background">Admin</option>
               </select>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
+              <Button className="btn-primary">
                 Send Invitation
               </Button>
             </div>

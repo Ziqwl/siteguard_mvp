@@ -127,12 +127,12 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
 
         {/* Quick Actions */}
         <div className="flex gap-4">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Scan className="h-4 w-4 mr-2" />
+          <Button className="btn-primary">
+            <Scan className="h-4 w-4" />
             Run Full Scan
           </Button>
-          <Button variant="outline" className="glass border-white/20 text-white hover:bg-white/5">
-            <Shield className="h-4 w-4 mr-2" />
+          <Button variant="outline" className="btn-secondary">
+            <Shield className="h-4 w-4" />
             Security Report
           </Button>
         </div>
@@ -211,11 +211,11 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 )}
                 
                 <div className="flex gap-2 pt-2">
-                  <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
+                  <Button variant="outline" size="sm" className="btn-secondary">
                     View Report
                   </Button>
-                  <Button variant="outline" size="sm" className="glass border-white/20 text-white hover:bg-white/5">
-                    <Scan className="h-3 w-3 mr-1" />
+                  <Button variant="outline" size="sm" className="btn-secondary">
+                    <Scan className="h-3 w-3" />
                     Rescan
                   </Button>
                 </div>

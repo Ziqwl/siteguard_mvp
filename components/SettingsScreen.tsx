@@ -89,8 +89,8 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               />
             </div>
             
-            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-[var(--spacing-6)] py-[var(--spacing-2)] rounded-[var(--radius)]">
-              <Save className="h-4 w-4 mr-2" />
+            <Button className="btn-primary">
+              <Save className="h-4 w-4" />
               Save Changes
             </Button>
           </CardContent>

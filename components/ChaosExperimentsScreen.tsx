@@ -169,7 +169,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                 className="btn-primary"
                 onClick={() => {/* TODO: Add new experiment modal */}}
               >
-                <Zap className="h-4 w-4 mr-2" />
+                <Zap className="h-4 w-4" />
                 New Experiment
               </Button>
           </div>
@@ -183,8 +183,8 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                     <p className="text-sm text-white/70">Active Experiments</p>
                     <p className="text-2xl font-bold text-white">1</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-[#10B981]/20">
-                     <Play className="h-6 w-6 text-[#10B981]" />
+                                     <div className="p-3 rounded-full bg-emerald-500/20">
+                     <Play className="h-6 w-6 text-emerald-400" />
                    </div>
                 </div>
               </CardContent>
@@ -197,8 +197,8 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                     <p className="text-sm text-white/70">Completed Today</p>
                     <p className="text-2xl font-bold text-white">3</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-[#3B82F6]/20">
-                     <CheckCircle className="h-6 w-6 text-[#3B82F6]" />
+                                     <div className="p-3 rounded-full bg-blue-500/20">
+                     <CheckCircle className="h-6 w-6 text-blue-400" />
                    </div>
                 </div>
               </CardContent>
@@ -211,8 +211,8 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                     <p className="text-sm text-white/70">Success Rate</p>
                     <p className="text-2xl font-bold text-white">87%</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-[#8B5CF6]/20">
-                     <BarChart3 className="h-6 w-6 text-[#8B5CF6]" />
+                                     <div className="p-3 rounded-full bg-purple-500/20">
+                     <BarChart3 className="h-6 w-6 text-purple-400" />
                    </div>
                 </div>
               </CardContent>
@@ -225,8 +225,8 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                     <p className="text-sm text-white/70">Avg Recovery</p>
                     <p className="text-2xl font-bold text-white">65s</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-[#F59E0B]/20">
-                     <Clock className="h-6 w-6 text-[#F59E0B]" />
+                                     <div className="p-3 rounded-full bg-orange-500/20">
+                     <Clock className="h-6 w-6 text-orange-400" />
                    </div>
                 </div>
               </CardContent>
@@ -268,15 +268,15 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                   <div className="flex items-center gap-2">
                     {experiment.status === 'running' && (
                       <>
-                        <Button 
-                          variant="outline" 
-                          size="sm"
-                          onClick={() => stopExperiment(experiment.id)}
-                          className="border-red-500/30 text-red-400 hover:bg-red-500/20"
-                        >
-                          <Pause className="h-4 w-4 mr-1" />
-                          Stop
-                        </Button>
+                                                  <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => stopExperiment(experiment.id)}
+                            className="btn-secondary border-red-500/30 text-red-400 hover:bg-red-500/20"
+                          >
+                            <Pause className="h-4 w-4" />
+                            Stop
+                          </Button>
                         <div className="w-20">
                           <Progress value={experiment.progress} className="h-2" />
                         </div>
@@ -284,25 +284,25 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                     )}
                     
                     {experiment.status === 'scheduled' && (
-                      <Button 
-                        size="sm"
-                        onClick={() => startExperiment(experiment.id)}
-                        className="bg-green-600 hover:bg-green-700"
-                      >
-                        <Play className="h-4 w-4 mr-1" />
-                        Start
-                      </Button>
+                                                <Button
+                            size="sm"
+                            onClick={() => startExperiment(experiment.id)}
+                            className="btn-primary bg-green-600 hover:bg-green-700"
+                          >
+                            <Play className="h-4 w-4" />
+                            Start
+                          </Button>
                     )}
                     
                     {experiment.status === 'completed' && (
-                      <Button 
-                        variant="outline" 
-                        size="sm"
-                        className="border-blue-500/30 text-blue-400 hover:bg-blue-500/20"
-                      >
-                        <RotateCcw className="h-4 w-4 mr-1" />
-                        Rerun
-                      </Button>
+                                                <Button
+                            variant="outline" 
+                            size="sm"
+                            className="btn-secondary border-blue-500/30 text-blue-400 hover:bg-blue-500/20"
+                          >
+                            <RotateCcw className="h-4 w-4" />
+                            Rerun
+                          </Button>
                     )}
                   </div>
                 </div>

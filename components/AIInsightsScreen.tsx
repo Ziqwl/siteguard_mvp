@@ -182,7 +182,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                 className="btn-primary"
                 onClick={() => {/* TODO: Refresh insights */}}
               >
-                <Brain className="h-4 w-4 mr-2" />
+                <Brain className="h-4 w-4" />
                 Refresh Analysis
               </Button>
           </div>
@@ -196,8 +196,8 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                     <p className="text-sm text-white/70">Active Insights</p>
                     <p className="text-2xl font-bold text-white">{activeInsights.length}</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-[#10B981]/20">
-                     <Brain className="h-6 w-6 text-[#10B981]" />
+                                     <div className="p-3 rounded-full bg-emerald-500/20">
+                     <Brain className="h-6 w-6 text-emerald-400" />
                    </div>
                 </div>
               </CardContent>
@@ -298,14 +298,14 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                       <p className="text-lg font-bold text-white">{insight.confidence}%</p>
                     </div>
                     {insight.status === 'active' && (
-                      <Button 
-                        size="sm"
-                        onClick={() => resolveInsight(insight.id)}
-                        className="bg-green-600 hover:bg-green-700"
-                      >
-                        <CheckCircle className="h-4 w-4 mr-1" />
-                        Resolve
-                      </Button>
+                                                <Button
+                            size="sm"
+                            onClick={() => resolveInsight(insight.id)}
+                            className="btn-primary bg-green-600 hover:bg-green-700"
+                          >
+                            <CheckCircle className="h-4 w-4" />
+                            Resolve
+                          </Button>
                     )}
                   </div>
                 </div>

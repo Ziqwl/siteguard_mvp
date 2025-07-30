@@ -213,9 +213,9 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             
             <Button 
               onClick={() => setShowAddModal(true)}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground transform hover:scale-105 transition-all duration-200 h-11 lg:h-12 touch-manipulation font-medium"
+              className="btn-primary"
             >
-              <Plus className="h-4 w-4 mr-2" />
+              <Plus className="h-4 w-4" />
               Add Monitor
             </Button>
           </div>
@@ -343,7 +343,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                       e.stopPropagation();
                       handleQuickAction('pause', monitor);
                     }}
-                    className="glass border-white/20 text-white hover:bg-white/5 flex-1 touch-manipulation text-xs lg:text-sm"
+                    className="btn-secondary text-xs lg:text-sm"
                   >
                     Pause
                   </Button>
@@ -354,7 +354,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                       e.stopPropagation();
                       handleQuickAction('test', monitor);
                     }}
-                    className="glass border-white/20 text-white hover:bg-white/5 flex-1 touch-manipulation text-xs lg:text-sm"
+                    className="btn-secondary text-xs lg:text-sm"
                   >
                     Test
                   </Button>
@@ -365,7 +365,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                       e.stopPropagation();
                       // Show more options
                     }}
-                    className="glass border-white/20 text-white hover:bg-white/5 w-10 p-0 touch-manipulation"
+                    className="btn-secondary w-10 p-0"
                   >
                     <MoreHorizontal className="h-4 w-4" />
                   </Button>
