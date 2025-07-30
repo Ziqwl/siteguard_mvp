@@ -283,7 +283,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </div>
 
         {/* Monitors Grid - Responsive */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 lg:gap-8">
           {filteredMonitors.map((monitor, index) => (
             <Card 
               key={monitor.id} 
@@ -294,9 +294,9 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">
                   <div className="space-y-1 min-w-0 flex-1">
-                    <CardTitle className="text-white flex items-center gap-2 group-hover:text-primary transition-colors text-base lg:text-lg truncate">
+                    <CardTitle className="text-white flex items-center gap-2 group-hover:text-primary transition-colors text-base lg:text-lg">
                       <Globe className="h-4 w-4 lg:h-5 lg:w-5 text-primary flex-shrink-0" />
-                      {monitor.name}
+                      <span className="truncate">{monitor.name}</span>
                     </CardTitle>
                     <CardDescription className="text-white/60 text-sm truncate">
                       {monitor.url}

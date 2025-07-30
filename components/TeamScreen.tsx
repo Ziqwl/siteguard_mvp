@@ -110,9 +110,9 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-8 md:space-y-12 px-4 md:px-8 lg:px-16">
+      <div className="space-y-8 md:space-y-12">
         {/* Team Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
           <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]">
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{teamStats.total}</div>
@@ -161,7 +161,7 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
         </div>
 
         {/* Team Members */}
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {filteredMembers.map((member, index) => (
             <Card key={member.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 100}ms` }}>
               <CardContent className="p-6">

@@ -38,7 +38,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-8 md:space-y-12 px-4 md:px-8 lg:px-16">
+      <div className="space-y-8 md:space-y-12">
         {/* Profile Settings */}
         <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]">
           <CardHeader>

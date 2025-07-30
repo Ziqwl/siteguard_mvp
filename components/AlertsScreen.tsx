@@ -121,7 +121,7 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
     >
       <div className="space-y-6">
         {/* Alert Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
           <Card className="glass border-white/10 animate-scale-in">
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{alertCounts.total}</div>
@@ -196,7 +196,7 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
         </div>
 
         {/* Alerts List */}
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {filteredAlerts.map((alert, index) => (
             <Card key={alert.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 50}ms` }}>
               <div className="card-header">

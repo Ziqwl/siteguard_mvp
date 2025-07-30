@@ -90,7 +90,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
     >
       <div className="space-y-6">
         {/* Security Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           <Card className="glass border-white/10 animate-scale-in">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium text-white/80">Average Security Score</CardTitle>
@@ -138,8 +138,10 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         </div>
 
         {/* Security Scans */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           <h3 className="text-lg font-semibold text-white">Recent Security Scans</h3>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           
           {mockScans.map((scan, index) => (
             <Card key={scan.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 100}ms` }}>
@@ -219,7 +221,8 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 </div>
               </CardContent>
             </Card>
-          ))}
+                      ))}
+          </div>
         </div>
       </div>
     </DashboardLayout>

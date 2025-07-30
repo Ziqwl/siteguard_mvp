@@ -157,13 +157,13 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
       isDarkMode={isDarkMode}
       currentScreen={currentScreen}
     >
-      <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 md:px-8 py-8">
+      <div className="w-full">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <h1 className="text-3xl font-bold text-white mb-2">Chaos Experiments</h1>
-              <p className="text-white/70">Test your system's resilience with controlled chaos</p>
+              <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2">Chaos Experiments</h1>
+              <p className="text-white/70 text-sm lg:text-base">Test your system's resilience with controlled chaos</p>
             </div>
                           <Button 
                 className="btn-primary"
@@ -175,7 +175,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
           </div>
           
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 mb-8">
             <Card className="card">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
@@ -235,7 +235,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
         </div>
 
         {/* Experiments List */}
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
           {experiments.map((experiment) => (
             <Card key={experiment.id} className="card group hover:scale-[1.02] transition-transform">
               <CardHeader className="pb-4">

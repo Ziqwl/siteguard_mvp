@@ -131,7 +131,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
         </div>
 
         {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {metrics.map((metric, index) => (
             <Card 
               key={index} 
@@ -160,14 +160,14 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               </CardHeader>
               <CardContent className="space-y-4 relative z-10">
                 <div className="flex items-baseline gap-3">
-                  <div className="text-4xl lg:text-5xl font-bold text-white group-hover:text-primary transition-colors">
+                  <div className="text-3xl lg:text-4xl font-bold text-white group-hover:text-primary transition-colors">
                     {metric.value}
                   </div>
-                  <ArrowUpRight className="h-6 w-6 text-white/40 group-hover:text-primary transition-colors" />
+                  <ArrowUpRight className="h-5 w-5 text-white/40 group-hover:text-primary transition-colors" />
                 </div>
-                <div className="flex items-center gap-2 text-sm lg:text-base text-emerald-400 font-medium">
-                  <TrendingUp className="h-5 w-5" />
-                  <span>{metric.change} from last month</span>
+                <div className="flex items-center gap-2 text-sm text-emerald-400 font-medium">
+                  <TrendingUp className="h-4 w-4" />
+                  <span className="truncate">{metric.change} from last month</span>
                 </div>
               </CardContent>
             </Card>
