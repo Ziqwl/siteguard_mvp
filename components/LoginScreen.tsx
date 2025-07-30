@@ -78,9 +78,9 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Left side - Branding (hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 p-8 xl:p-12 items-center justify-center relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 p-8 xl:p-12 items-center justify-center relative overflow-hidden">
         <div className="relative z-10 max-w-md text-center">
           <div className="inline-flex items-center justify-center w-20 h-20 xl:w-24 xl:h-24 rounded-2xl xl:rounded-3xl bg-primary/20 ring-1 ring-primary/30 mb-8">
             <Shield className="w-10 h-10 xl:w-12 xl:h-12 text-primary" />
@@ -97,7 +97,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
       </div>
 
       {/* Right side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 xl:p-12 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 lg:bg-none">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-6 lg:p-8 xl:p-12">
         <div className="w-full max-w-md space-y-6 lg:space-y-8">
           {/* Theme toggle */}
           <div className="flex justify-end">

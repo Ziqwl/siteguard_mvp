@@ -1,9 +1,60 @@
-/* Import fonts first */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Единая цветовая схема - Deep Purple Theme */
+  --primary-blue: #667eea;
+  --primary-purple: #764ba2;
+  --accent-teal: #5eead4;
+  --accent-purple: #a78bfa;
+  
+  /* CSS переменные для Tailwind */
+  --color-primary: 102 126 234;
+  --color-accent: 118 75 162;
+  --color-accent-teal: 94 234 212;
+  
+  /* Градиенты */
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-secondary: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  --gradient-dark: linear-gradient(135deg, #0f0f23 0%, #1e1b4b 100%);
+  
+  /* Системные цвета */
+  --background: #0f0f23;
+  --foreground: #ffffff;
+  --card: rgba(255, 255, 255, 0.08);
+  --card-foreground: #ffffff;
+  --primary: var(--primary-blue);
+  --primary-foreground: #ffffff;
+  --secondary: rgba(255, 255, 255, 0.12);
+  --secondary-foreground: #ffffff;
+  --muted: rgba(255, 255, 255, 0.06);
+  --muted-foreground: #a1a1aa;
+  --accent: var(--primary-purple);
+  --accent-foreground: #ffffff;
+  --border: var(--primary-blue);
+  
+  /* Glass morphism */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.15);
+  --glass-mobile: rgba(255, 255, 255, 0.12);
+  
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size: 16px;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Spacing */
+  --radius: 12px;
+  --touch-target: 48px;
+  --mobile-padding: 1rem;
+  --tablet-padding: 1.5rem;
+  --desktop-padding: 2rem;
+}
 
 @layer utilities {
   .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--gradient-primary);
     color: white;
     border: none;
     border-radius: 12px;
@@ -125,13 +176,13 @@
   }
   
   .card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.06) 100%);
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 28px;
-    backdrop-filter: blur(24px);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 24px;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
   }

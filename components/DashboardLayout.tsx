@@ -83,7 +83,7 @@ export function DashboardLayout({
     <div className="min-h-screen flex bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sidebar */}
               <div className={`
-          fixed inset-y-0 left-0 z-50 w-64 lg:w-72 xl:w-80
+          fixed inset-y-0 left-0 z-50 w-72 lg:w-80 xl:w-96
           glass-strong border-r border-white/10 
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
@@ -130,7 +130,7 @@ export function DashboardLayout({
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                          ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-blue-400/30 shadow-lg shadow-blue-500/20' 
+                          ? 'bg-gradient-to-r from-primary/20 to-accent/20 text-white border border-primary/30 shadow-lg shadow-primary/20' 
                           : 'text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-white/5 hover:to-white/10 hover:shadow-lg hover:shadow-white/5'
                       }
                     `}
