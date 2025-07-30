@@ -24,10 +24,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+0.1%',
       trend: 'up',
       icon: Activity,
-      color: 'text-primary',
-      bgColor: 'bg-gradient-to-br from-primary/20 to-primary/10',
-      borderColor: 'border-primary/30',
-      gradient: 'from-primary to-primary',
+      color: 'text-emerald-400',
+      bgColor: 'bg-gradient-to-br from-emerald-400/30 to-emerald-500/20',
+      borderColor: 'border-emerald-400/40',
+      gradient: 'from-emerald-400 to-emerald-500',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -36,10 +36,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+3',
       trend: 'up',
       icon: Globe,
-      color: 'text-accent',
-      bgColor: 'bg-gradient-to-br from-accent/20 to-accent/10',
-      borderColor: 'border-accent/30',
-      gradient: 'from-accent to-accent',
+      color: 'text-blue-400',
+      bgColor: 'bg-gradient-to-br from-blue-400/30 to-blue-500/20',
+      borderColor: 'border-blue-400/40',
+      gradient: 'from-blue-400 to-blue-500',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -48,10 +48,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+12',
       trend: 'up',
       icon: Shield,
-      color: 'text-accent-teal',
-      bgColor: 'bg-gradient-to-br from-accent-teal/20 to-accent-teal/10',
-      borderColor: 'border-accent-teal/30',
-      gradient: 'from-accent-teal to-accent-teal',
+      color: 'text-purple-400',
+      bgColor: 'bg-gradient-to-br from-purple-400/30 to-purple-500/20',
+      borderColor: 'border-purple-400/40',
+      gradient: 'from-purple-400 to-purple-500',
       onClick: () => onNavigate('security')
     }
   ];
@@ -144,7 +144,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               style={{ animationDelay: `${index * 150}ms` }}
               onClick={metric.onClick}
             >
-              <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-5 group-hover:opacity-10 transition-opacity`} />
+                              <div className={`absolute inset-0 bg-gradient-to-br ${metric.gradient} opacity-8 group-hover:opacity-15 transition-opacity`} />
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3 relative z-10">
                 <CardTitle className="text-sm lg:text-base font-semibold text-white/90 group-hover:text-white transition-colors">
                   {metric.title}
@@ -153,8 +153,9 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                   p-4 lg:p-5 rounded-2xl ${metric.bgColor} 
                   group-hover:scale-110 transition-transform ring-1 ring-white/20
                   shadow-xl shadow-black/20 backdrop-blur-sm
+                  group-hover:shadow-2xl group-hover:shadow-${metric.color.split('-')[1]}-500/30
                 `}>
-                  <metric.icon className={`h-6 w-6 lg:h-7 lg:w-7 ${metric.color}`} />
+                  <metric.icon className={`h-6 w-6 lg:h-7 lg:w-7 ${metric.color} drop-shadow-lg`} />
                 </div>
               </CardHeader>
               <CardContent className="space-y-4 relative z-10">

@@ -84,11 +84,11 @@ export function DashboardLayout({
       {/* Sidebar */}
               <div className={`
           fixed inset-y-0 left-0 z-50 w-72 lg:w-80 xl:w-96
-          glass-strong border-r border-white/10 
+          glass-strong border-r border-white/20 
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:translate-x-0 lg:static lg:inset-0
-          bg-gradient-to-b from-slate-900/95 via-slate-800/95 to-slate-900/95
+          bg-gradient-to-b from-slate-800/90 via-slate-700/90 to-slate-800/90
         `}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
@@ -130,8 +130,8 @@ export function DashboardLayout({
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                          ? 'bg-gradient-to-r from-primary/25 to-accent/25 text-white border border-primary/40 shadow-xl shadow-primary/25 backdrop-blur-sm' 
-                          : 'text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-white/8 hover:to-white/12 hover:shadow-lg hover:shadow-white/10 hover:backdrop-blur-sm'
+                          ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-white border border-blue-400/50 shadow-xl shadow-blue-500/30 backdrop-blur-sm' 
+                          : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-white/15 hover:shadow-lg hover:shadow-white/15 hover:backdrop-blur-sm'
                       }
                     `}
                   >
