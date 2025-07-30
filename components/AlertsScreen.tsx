@@ -121,32 +121,32 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
     >
       <div className="space-y-6">
         {/* Alert Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
-          <Card className="glass border-white/10 animate-scale-in">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <Card className="card">
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{alertCounts.total}</div>
-              <p className="text-sm text-white/60">Total Alerts</p>
+              <p className="text-sm text-gray-400">Total Alerts</p>
             </div>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '100ms' }}>
+          <Card className="card" style={{ animationDelay: '100ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.open}</div>
-              <p className="text-sm text-white/60">Open</p>
+              <p className="text-sm text-gray-400">Open</p>
             </div>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
+          <Card className="card" style={{ animationDelay: '200ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.critical}</div>
-              <p className="text-sm text-white/60">Critical</p>
+              <p className="text-sm text-gray-400">Critical</p>
             </div>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '300ms' }}>
+          <Card className="card" style={{ animationDelay: '300ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">{alertCounts.resolved}</div>
-              <p className="text-sm text-white/60">Resolved</p>
+              <p className="text-sm text-gray-400">Resolved</p>
             </div>
           </Card>
         </div>
@@ -196,9 +196,9 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
         </div>
 
         {/* Alerts List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {filteredAlerts.map((alert, index) => (
-            <Card key={alert.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 50}ms` }}>
+            <Card key={alert.id} className="card" style={{ animationDelay: `${index * 50}ms` }}>
               <div className="card-header">
                 <div className="flex items-start justify-between">
                   <div className="space-y-2 flex-1">

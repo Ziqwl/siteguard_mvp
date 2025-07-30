@@ -90,21 +90,21 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
     >
       <div className="space-y-6">
         {/* Security Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
-          <Card className="glass border-white/10 animate-scale-in">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <Card className="card">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/80">Average Security Score</CardTitle>
+              <CardTitle className="text-sm font-medium text-white">Average Security Score</CardTitle>
               <Shield className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-white">85</div>
-              <p className="text-xs text-white/60">+5 from last week</p>
+              <p className="text-xs text-emerald-400">+5 from last week</p>
             </CardContent>
           </Card>
 
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '100ms' }}>
+          <Card className="card" style={{ animationDelay: '100ms' }}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/80">Active Vulnerabilities</CardTitle>
+              <CardTitle className="text-sm font-medium text-white">Active Vulnerabilities</CardTitle>
               <Bug className="h-4 w-4 text-red-400" />
             </CardHeader>
             <CardContent>
@@ -113,14 +113,14 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             </CardContent>
           </Card>
 
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
+          <Card className="card" style={{ animationDelay: '200ms' }}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium text-white/80">Last Full Scan</CardTitle>
+              <CardTitle className="text-sm font-medium text-white">Last Full Scan</CardTitle>
               <Scan className="h-4 w-4 text-blue-400" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-white">2h</div>
-              <p className="text-xs text-white/60">ago</p>
+              <p className="text-xs text-gray-400">ago</p>
             </CardContent>
           </Card>
         </div>
@@ -137,14 +137,14 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
           </Button>
         </div>
 
-        {/* Security Scans */}
+                {/* Security Scans */}
         <div className="space-y-6">
           <h3 className="text-lg font-semibold text-white">Recent Security Scans</h3>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          
-          {mockScans.map((scan, index) => (
-            <Card key={scan.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 100}ms` }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            
+            {mockScans.map((scan, index) => (
+              <Card key={scan.id} className="card" style={{ animationDelay: `${index * 100}ms` }}>
               <CardHeader>
                 <div className="flex items-start justify-between">
                   <div className="space-y-1">

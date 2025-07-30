@@ -218,7 +218,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                 {recentActivities.slice(0, 3).map((activity, index) => (
                   <div 
                     key={index} 
-                    className="flex items-start gap-3 p-2 rounded-lg glass hover:bg-white/5 transition-colors cursor-pointer"
+                    className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-800/50 transition-colors cursor-pointer"
                     onClick={() => onNavigate('alerts')}
                   >
                     <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
@@ -231,7 +231,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                         {activity.message}
                       </p>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs text-white/50">{activity.time}</span>
+                        <span className="text-xs text-gray-500">{activity.time}</span>
                       </div>
                     </div>
                   </div>
@@ -241,7 +241,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                 variant="outline"
                 size="sm"
                 onClick={() => onNavigate('alerts')}
-                className="w-full mt-4 glass border-white/20 text-white hover:bg-white/5"
+                className="btn-secondary w-full mt-4"
               >
                 View All Alerts
               </Button>

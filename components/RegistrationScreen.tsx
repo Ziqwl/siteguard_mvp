@@ -222,7 +222,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                   
                   <Button
                     type="submit"
-                    className="w-full h-12 lg:h-14 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-base"
+                    className="btn-primary w-full"
                     disabled={isLoading}
                   >
                     {isLoading ? (
