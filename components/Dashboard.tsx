@@ -24,10 +24,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+0.1%',
       trend: 'up',
       icon: Activity,
-      color: 'text-emerald-400',
-      bgColor: 'bg-gradient-to-br from-emerald-400/30 to-emerald-500/20',
-      borderColor: 'border-emerald-400/40',
-      gradient: 'from-emerald-400 to-emerald-500',
+      color: 'text-[#39FF14]',
+      bgColor: 'bg-gradient-to-br from-[#39FF14]/30 to-[#39FF14]/20',
+      borderColor: 'border-[#39FF14]/40',
+      gradient: 'from-[#39FF14] to-[#39FF14]',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -36,10 +36,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+3',
       trend: 'up',
       icon: Globe,
-      color: 'text-blue-400',
-      bgColor: 'bg-gradient-to-br from-blue-400/30 to-blue-500/20',
-      borderColor: 'border-blue-400/40',
-      gradient: 'from-blue-400 to-blue-500',
+      color: 'text-[#00BFFF]',
+      bgColor: 'bg-gradient-to-br from-[#00BFFF]/30 to-[#00BFFF]/20',
+      borderColor: 'border-[#00BFFF]/40',
+      gradient: 'from-[#00BFFF] to-[#00BFFF]',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -48,10 +48,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+12',
       trend: 'up',
       icon: Shield,
-      color: 'text-purple-400',
-      bgColor: 'bg-gradient-to-br from-purple-400/30 to-purple-500/20',
-      borderColor: 'border-purple-400/40',
-      gradient: 'from-purple-400 to-purple-500',
+      color: 'text-[#FF073A]',
+      bgColor: 'bg-gradient-to-br from-[#FF073A]/30 to-[#FF073A]/20',
+      borderColor: 'border-[#FF073A]/40',
+      gradient: 'from-[#FF073A] to-[#FF073A]',
       onClick: () => onNavigate('security')
     }
   ];

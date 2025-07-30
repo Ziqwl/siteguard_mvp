@@ -10,8 +10,6 @@ import { TeamScreen } from "./components/TeamScreen";
 import { SettingsScreen } from "./components/SettingsScreen";
 import { ChaosExperimentsScreen } from "./components/ChaosExperimentsScreen";
 import { AIInsightsScreen } from "./components/AIInsightsScreen";
-import { ToolsScreen } from "./components/ToolsScreen";
-import { ReportsScreen } from "./components/ReportsScreen";
 import { ToastProvider } from "./components/ToastNotification";
 
 export type AppScreen =
@@ -26,8 +24,8 @@ export type AppScreen =
   | "settings"
   | "chaos-experiments"
   | "ai-insights"
-  | "tools"
-  | "reports";
+  | "runbooks"
+  | "integrations";
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>("login");
@@ -92,10 +90,6 @@ function App() {
         return <ChaosExperimentsScreen {...commonProps} currentScreen={currentScreen} />;
       case "ai-insights":
         return <AIInsightsScreen {...commonProps} currentScreen={currentScreen} />;
-      case "tools":
-        return <ToolsScreen {...commonProps} currentScreen={currentScreen} />;
-      case "reports":
-        return <ReportsScreen {...commonProps} currentScreen={currentScreen} />;
       default:
         return <LoginScreen {...commonProps} />;
     }

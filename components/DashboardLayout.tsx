@@ -15,7 +15,9 @@ import {
   LogOut,
   Menu,
   X,
-  ChevronLeft
+  ChevronLeft,
+  Zap,
+  Brain
 } from 'lucide-react';
 import {
   Tooltip,
@@ -63,13 +65,12 @@ export function DashboardLayout({
   const sidebarItems = [
     { icon: BarChart3, label: 'Dashboard', screen: 'dashboard' as AppScreen, disabled: false },
     { icon: Globe, label: 'Monitors', screen: 'monitors' as AppScreen, disabled: false },
+    { icon: Shield, label: 'Security', screen: 'security' as AppScreen, disabled: false },
     { icon: AlertTriangle, label: 'Alerts', screen: 'alerts' as AppScreen, disabled: false },
-    { icon: Activity, label: 'Chaos Experiments', screen: 'chaos-experiments' as AppScreen, disabled: false },
-    { icon: Shield, label: 'AI Insights', screen: 'ai-insights' as AppScreen, disabled: false },
-    { icon: Settings, label: 'Tools', screen: 'tools' as AppScreen, disabled: false },
+    { icon: Zap, label: 'Chaos Experiments', screen: 'chaos-experiments' as AppScreen, disabled: false },
+    { icon: Brain, label: 'AI Insights', screen: 'ai-insights' as AppScreen, disabled: false },
     { icon: Users, label: 'Team', screen: 'team' as AppScreen, disabled: false },
     { icon: Settings, label: 'Settings', screen: 'settings' as AppScreen, disabled: false },
-    // Coming soon features
     { icon: Activity, label: 'AI Postmortems', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - AI-powered incident analysis' },
     { icon: Shield, label: 'Drift Correction', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated security drift detection' },
     { icon: Settings, label: 'Runbooks', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated incident response playbooks' }
@@ -97,8 +98,8 @@ export function DashboardLayout({
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-primary/20 ring-1 ring-primary/30">
-                <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-primary" />
+              <div className="p-2 rounded-xl bg-[#39FF14]/20 ring-1 ring-[#39FF14]/30 shadow-lg shadow-[#39FF14]/20">
+                <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-[#39FF14] drop-shadow-lg" />
               </div>
               <div>
                 <h1 className="font-bold text-white text-lg lg:text-xl">SiteGuard</h1>
@@ -133,8 +134,8 @@ export function DashboardLayout({
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                          ? 'bg-gradient-to-r from-blue-500/30 to-purple-500/30 text-white border border-blue-400/50 shadow-xl shadow-blue-500/30 backdrop-blur-sm' 
-                          : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-white/10 hover:to-white/15 hover:shadow-lg hover:shadow-white/15 hover:backdrop-blur-sm'
+                          ? 'bg-gradient-to-r from-[#39FF14]/30 to-[#FF073A]/30 text-white border border-[#39FF14]/50 shadow-xl shadow-[#39FF14]/30 backdrop-blur-sm' 
+                          : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#39FF14]/10 hover:to-[#FF073A]/15 hover:shadow-lg hover:shadow-[#39FF14]/15 hover:backdrop-blur-sm'
                       }
                     `}
                   >
