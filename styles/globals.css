@@ -266,6 +266,7 @@
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    transition: all duration-300 ease-in-out;
     
     /* Mobile optimizations */
     -webkit-text-size-adjust: 100%;
@@ -358,6 +359,7 @@
 
 html {
   font-size: var(--font-size);
+  transition: all duration-300 ease-in-out;
   
   /* Mobile font size adjustment */
   @media (max-width: 640px) {
