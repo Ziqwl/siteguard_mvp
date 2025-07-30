@@ -120,7 +120,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
               <form onSubmit={handleLogin} className="space-y-5 lg:space-y-6">
                 {/* Email Field */}
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-white/90">Email Address</Label>
+                  <Label htmlFor="email" className="text-white/90">Username or Email</Label>
                   <div className="relative">
                     <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-white/50" />
                     <Input
@@ -128,7 +128,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       type="email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="your@email.com"
+                      placeholder="your@email.com or username"
                       className="pl-10 h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
                       disabled={isLoading}
                     />

@@ -16,7 +16,6 @@ interface RegistrationScreenProps {
 
 export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: RegistrationScreenProps) {
   const [formData, setFormData] = useState({
-    name: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -27,7 +26,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.email || !formData.password) {
+    if (!formData.email || !formData.password) {
       addToast({
         type: 'error',
         title: 'Please fill in all required fields'
@@ -149,26 +148,14 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
               
               <form onSubmit={handleRegister}>
                 <CardContent className="space-y-5 lg:space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white/90">Full Name</Label>
-                    <Input
-                      id="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      value={formData.name}
-                      onChange={(e) => handleInputChange('name', e.target.value)}
-                      className="h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
-                      disabled={isLoading}
-                      required
-                    />
-                  </div>
+
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white/90">Email</Label>
+                    <Label htmlFor="email" className="text-white/90">Username or Email</Label>
                     <Input
                       id="email"
                       type="email"
-                      placeholder="Enter your email"
+                      placeholder="Enter your username or email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
                       className="h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
