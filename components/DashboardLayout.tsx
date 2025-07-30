@@ -17,6 +17,12 @@ import {
   X,
   ChevronLeft
 } from 'lucide-react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from './ui/tooltip';
 import { AppScreen } from '../App';
 
 interface DashboardLayoutProps {
@@ -55,12 +61,15 @@ export function DashboardLayout({
   }, []);
 
   const sidebarItems = [
-    { icon: BarChart3, label: 'Dashboard', screen: 'dashboard' as AppScreen },
-    { icon: Globe, label: 'Monitors', screen: 'monitors' as AppScreen },
-    { icon: Shield, label: 'Security', screen: 'security' as AppScreen },
-    { icon: AlertTriangle, label: 'Alerts', screen: 'alerts' as AppScreen },
-    { icon: Users, label: 'Team', screen: 'team' as AppScreen },
-    { icon: Settings, label: 'Settings', screen: 'settings' as AppScreen }
+    { icon: BarChart3, label: 'Dashboard', screen: 'dashboard' as AppScreen, disabled: false },
+    { icon: Globe, label: 'Monitors', screen: 'monitors' as AppScreen, disabled: false },
+    { icon: Shield, label: 'Security', screen: 'security' as AppScreen, disabled: false },
+    { icon: AlertTriangle, label: 'Alerts', screen: 'alerts' as AppScreen, disabled: false },
+    { icon: Users, label: 'Team', screen: 'team' as AppScreen, disabled: false },
+    { icon: Settings, label: 'Settings', screen: 'settings' as AppScreen, disabled: false },
+    { icon: Activity, label: 'AI Postmortems', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - AI-powered incident analysis' },
+    { icon: Shield, label: 'Drift Correction', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated security drift detection' },
+    { icon: Settings, label: 'Runbooks', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated incident response playbooks' }
   ];
 
   const handleNavigation = (screen: AppScreen) => {
@@ -106,24 +115,46 @@ export function DashboardLayout({
           
           {/* Navigation */}
           <nav className="flex-1 p-3 lg:p-4 space-y-1 lg:space-y-2 overflow-y-auto">
-            {sidebarItems.map((item, index) => (
-              <button
-                key={index}
-                onClick={() => handleNavigation(item.screen)}
-                className={`
-                  w-full flex items-center gap-3 lg:gap-4 px-3 lg:px-4 py-3 lg:py-3.5 
-                  rounded-xl text-left transition-all duration-200 
-                  touch-manipulation min-h-[48px] lg:min-h-[52px]
-                  ${currentScreen === item.screen 
-                    ? 'bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10' 
-                    : 'text-white/70 hover:text-white hover:bg-white/5 hover:shadow-md'
-                  }
-                `}
-              >
-                <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                <span className="font-medium text-sm lg:text-base">{item.label}</span>
-              </button>
-            ))}
+            <TooltipProvider>
+              {sidebarItems.map((item, index) => {
+                const buttonContent = (
+                  <button
+                    key={index}
+                    onClick={() => !item.disabled && handleNavigation(item.screen)}
+                    disabled={item.disabled}
+                    className={`
+                      w-full flex items-center gap-3 lg:gap-4 px-3 lg:px-4 py-3 lg:py-3.5 
+                      rounded-xl text-left transition-all duration-200 
+                      touch-manipulation min-h-[48px] lg:min-h-[52px]
+                      ${item.disabled 
+                        ? 'text-white/30 cursor-not-allowed opacity-50' 
+                        : currentScreen === item.screen 
+                          ? 'bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10' 
+                          : 'text-white/70 hover:text-white hover:bg-white/5 hover:shadow-md'
+                      }
+                    `}
+                  >
+                    <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
+                    <span className="font-medium text-sm lg:text-base">{item.label}</span>
+                  </button>
+                );
+
+                return item.disabled && item.tooltip ? (
+                  <Tooltip key={index}>
+                    <TooltipTrigger asChild>
+                      {buttonContent}
+                    </TooltipTrigger>
+                    <TooltipContent side="right" className="bg-slate-800 text-white border-white/20">
+                      <p>{item.tooltip}</p>
+                    </TooltipContent>
+                  </Tooltip>
+                ) : (
+                  <div key={index}>
+                    {buttonContent}
+                  </div>
+                );
+              })}
+            </TooltipProvider>
           </nav>
           
           {/* Footer Section */}
@@ -202,8 +233,8 @@ export function DashboardLayout({
         </header>
 
         {/* Page Content */}
-        <main className="flex-1 p-4 lg:p-6 xl:p-8 overflow-auto">
-          <div className="max-w-7xl mx-auto w-full">
+        <main className="flex-1 overflow-auto">
+          <div className="w-full max-w-4xl mx-auto px-2 sm:px-4 md:px-8 py-8">
             {children}
           </div>
         </main>

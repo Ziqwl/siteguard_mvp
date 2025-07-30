@@ -81,7 +81,7 @@ export function ToastNotification({ toast, onRemove }: ToastNotificationProps) {
         glass border transition-all duration-300 ease-out
         ${isVisible && !isExiting ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}
         ${isExiting ? 'translate-x-full opacity-0' : ''}
-        w-80 shadow-lg
+        w-full max-w-sm sm:w-80 shadow-lg
       `}
     >
       <CardContent className="p-4">

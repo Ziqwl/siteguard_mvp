@@ -10,11 +10,22 @@
     font-size: 1.15em;
     letter-spacing: 0.02em;
     transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
+    min-height: 40px;
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    .btn-primary {
+      width: auto;
+    }
   }
   .btn-primary:hover, .btn-primary:focus {
     background: linear-gradient(90deg, var(--accent-purple), var(--accent-teal));
     border-color: var(--accent-purple);
     box-shadow: 0 10px 32px 0 rgba(167, 139, 250, 0.28);
+  }
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
   }
   .btn-primary:active {
     background: var(--accent-purple);
@@ -31,12 +42,23 @@
     font-size: 1.05em;
     box-shadow: 0 2px 12px 0 rgba(167, 139, 250, 0.14);
     transition: border-color 0.2s, color 0.2s, background 0.2s;
+    min-height: 40px;
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    .btn-secondary {
+      width: auto;
+    }
   }
   .btn-secondary:hover, .btn-secondary:focus {
     background: var(--accent-purple);
     color: var(--accent-foreground);
     border-color: var(--accent-teal);
     box-shadow: 0 6px 24px 0 rgba(167, 139, 250, 0.22);
+  }
+  .btn-secondary:focus-visible {
+    outline: 2px solid var(--accent-purple);
+    outline-offset: 2px;
   }
   .btn-secondary:active {
     background: var(--accent-teal);
@@ -51,10 +73,21 @@
     padding: 0.75em 1.2em;
     font-size: 1em;
     transition: color 0.2s;
+    min-height: 40px;
+    width: 100%;
+  }
+  @media (min-width: 640px) {
+    .btn-tertiary {
+      width: auto;
+    }
   }
   .btn-tertiary:hover, .btn-tertiary:focus {
     color: var(--accent-purple);
     text-decoration: underline;
+  }
+  .btn-tertiary:focus-visible {
+    outline: 2px solid var(--accent-teal);
+    outline-offset: 2px;
   }
   .btn-tertiary:active {
     color: var(--accent-foreground);
@@ -102,47 +135,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 
-@layer utilities {
-  .btn-primary {
-    background: var(--accent-teal);
-    color: var(--primary-foreground);
-    border: 2px solid var(--accent-teal);
-    border-radius: var(--radius);
-    box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.15);
-    font-weight: var(--font-weight-semibold);
-    transition: box-shadow 0.2s, background 0.2s, border-color 0.2s;
-    padding: 0.75em 1.5em;
-  }
-  .btn-primary:hover, .btn-primary:focus {
-    background: linear-gradient(90deg, var(--accent-teal), var(--accent-purple));
-    border-color: var(--accent-purple);
-    box-shadow: 0 4px 16px 0 rgba(167, 139, 250, 0.18);
-  }
-  .btn-primary:active {
-    background: var(--accent-purple);
-    border-color: var(--accent-teal);
-    box-shadow: 0 2px 8px 0 rgba(94, 234, 212, 0.12);
-  }
-  .btn-secondary {
-    background: transparent;
-    color: var(--accent-purple);
-    border: 2px solid var(--accent-purple);
-    border-radius: var(--radius);
-    font-weight: var(--font-weight-medium);
-    transition: border-color 0.2s, color 0.2s;
-    padding: 0.75em 1.5em;
-  }
-  .btn-secondary:hover, .btn-secondary:focus {
-    background: var(--accent-purple);
-    color: var(--accent-foreground);
-    border-color: var(--accent-teal);
-  }
-  .btn-secondary:active {
-    background: var(--accent-teal);
-    color: var(--primary-foreground);
-    border-color: var(--accent-purple);
-  }
-}
+
 
 :root {
   /* Typography */
