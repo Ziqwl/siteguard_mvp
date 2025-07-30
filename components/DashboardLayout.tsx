@@ -82,13 +82,14 @@ export function DashboardLayout({
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
       {/* Sidebar */}
-      <div className={`
-        fixed inset-y-0 left-0 z-50 w-64 lg:w-72 xl:w-80
-        glass-strong border-r border-white/10 
-        transform transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-        lg:translate-x-0 lg:static lg:inset-0
-      `}>
+              <div className={`
+          fixed inset-y-0 left-0 z-50 w-64 lg:w-72 xl:w-80
+          glass-strong border-r border-white/10 
+          transform transition-transform duration-300 ease-in-out
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+          lg:translate-x-0 lg:static lg:inset-0
+          bg-gradient-to-b from-slate-900/95 via-slate-800/95 to-slate-900/95
+        `}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
@@ -123,14 +124,14 @@ export function DashboardLayout({
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
                     className={`
-                      w-full flex items-center gap-3 lg:gap-4 px-3 lg:px-4 py-3 lg:py-3.5 
-                      rounded-xl text-left transition-all duration-200 
-                      touch-manipulation min-h-[48px] lg:min-h-[52px]
+                      w-full flex items-center gap-3 lg:gap-4 px-4 lg:px-5 py-4 lg:py-4.5 
+                      rounded-2xl text-left transition-all duration-300 ease-out
+                      touch-manipulation min-h-[52px] lg:min-h-[56px]
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                          ? 'bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/10' 
-                          : 'text-white/70 hover:text-white hover:bg-white/5 hover:shadow-md'
+                          ? 'bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-white border border-blue-400/30 shadow-lg shadow-blue-500/20' 
+                          : 'text-white/70 hover:text-white hover:bg-gradient-to-r hover:from-white/5 hover:to-white/10 hover:shadow-lg hover:shadow-white/5'
                       }
                     `}
                   >
