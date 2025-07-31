@@ -152,7 +152,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                   <div className="text-2xl font-bold text-white">
                     {metric.value}
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-gray-400" />
+                  <ArrowUpRight className="h-4 w-4 text-gray-300" />
                 </div>
                 <div className="flex items-center gap-2 text-sm text-emerald-400 font-medium">
                   <TrendingUp className="h-3 w-3" />
@@ -171,19 +171,19 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Avg Response Time</span>
+                <span className="text-sm text-gray-300 font-medium">Avg Response Time</span>
                 <span className="text-sm font-semibold text-white">125ms</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Total Requests</span>
+                <span className="text-sm text-gray-300 font-medium">Total Requests</span>
                 <span className="text-sm font-semibold text-white">2.4M</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Error Rate</span>
+                <span className="text-sm text-gray-300 font-medium">Error Rate</span>
                 <span className="text-sm font-semibold text-emerald-400">0.02%</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Security Score</span>
+                <span className="text-sm text-gray-300 font-medium">Security Score</span>
                 <span className="text-sm font-semibold text-primary">A+</span>
               </div>
             </CardContent>
@@ -196,15 +196,15 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
             <CardContent className="space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span className="text-sm text-gray-400">All systems operational</span>
+                <span className="text-sm text-gray-300 font-medium">All systems operational</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                <span className="text-sm text-gray-400">Monitoring active</span>
+                <span className="text-sm text-gray-300 font-medium">Monitoring active</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span className="text-sm text-gray-400">Security enabled</span>
+                <span className="text-sm text-gray-300 font-medium">Security enabled</span>
               </div>
             </CardContent>
           </Card>

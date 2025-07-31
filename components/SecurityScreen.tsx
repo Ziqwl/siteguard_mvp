@@ -88,7 +88,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-6">
+      <div className="space-y-6 w-full max-w-4xl mx-auto">
         {/* Security Overview */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <Card className="card">
@@ -120,7 +120,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold text-white">2h</div>
-              <p className="text-xs text-gray-400">ago</p>
+              <p className="text-xs text-gray-300 font-medium">ago</p>
             </CardContent>
           </Card>
         </div>
@@ -152,7 +152,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                       <Globe className="h-5 w-5 text-primary" />
                       {scan.website}
                     </CardTitle>
-                    <CardDescription className="text-gray-400">
+                    <CardDescription className="text-gray-300">
                       Last scan: {scan.lastScan} • Next: {scan.nextScan}
                     </CardDescription>
                   </div>
@@ -164,7 +164,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 {scan.status === 'scanning' ? (
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-gray-400">Scanning progress</span>
+                      <span className="text-gray-300 font-medium">Scanning progress</span>
                       <span className="text-white">{scan.progress}%</span>
                     </div>
                     <Progress value={scan.progress} className="h-2" />
@@ -173,13 +173,13 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                   <>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-1">
-                        <div className="text-xs text-gray-400">Security Score</div>
+                        <div className="text-xs text-gray-300 font-medium">Security Score</div>
                         <div className={`text-2xl font-bold ${getScoreColor(scan.score!)}`}>
                           {scan.score}/100
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <div className="text-xs text-gray-400">Vulnerabilities</div>
+                        <div className="text-xs text-gray-300 font-medium">Vulnerabilities</div>
                         <div className="text-2xl font-bold text-white flex items-center gap-2">
                           {scan.vulnerabilities}
                           {scan.vulnerabilities! > 0 && (

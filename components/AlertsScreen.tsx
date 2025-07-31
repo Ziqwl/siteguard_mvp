@@ -119,34 +119,34 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-6">
+      <div className="space-y-6 w-full max-w-4xl mx-auto">
         {/* Alert Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <Card className="card">
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{alertCounts.total}</div>
-              <p className="text-sm text-gray-400">Total Alerts</p>
+              <p className="text-sm text-gray-300 font-medium">Total Alerts</p>
             </div>
           </Card>
           
           <Card className="card" style={{ animationDelay: '100ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.open}</div>
-              <p className="text-sm text-gray-400">Open</p>
+              <p className="text-sm text-gray-300 font-medium">Open</p>
             </div>
           </Card>
           
           <Card className="card" style={{ animationDelay: '200ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-red-400">{alertCounts.critical}</div>
-              <p className="text-sm text-gray-400">Critical</p>
+              <p className="text-sm text-gray-300 font-medium">Critical</p>
             </div>
           </Card>
           
           <Card className="card" style={{ animationDelay: '300ms' }}>
             <div className="p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">{alertCounts.resolved}</div>
-              <p className="text-sm text-gray-400">Resolved</p>
+              <p className="text-sm text-gray-300 font-medium">Resolved</p>
             </div>
           </Card>
         </div>
@@ -206,7 +206,7 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
                       {getStatusIcon(alert.status)}
                       <div className="space-y-1 flex-1">
                         <h3 className="text-white">{alert.title}</h3>
-                        <p className="text-gray-400">
+                        <p className="text-gray-300">
                           {alert.description}
                         </p>
                         <div className="flex items-center gap-3 text-sm text-gray-500">

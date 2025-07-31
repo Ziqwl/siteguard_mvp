@@ -196,7 +196,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-6 lg:space-y-8">
+      <div className="space-y-6 lg:space-y-8 w-full max-w-4xl mx-auto">
         {/* Header Actions - Mobile First */}
         <div className="flex flex-col gap-4">
           {/* Search and Add Button */}
@@ -256,28 +256,28 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
           <Card className="card">
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-white">{stats.total}</div>
-              <p className="text-xs lg:text-sm text-gray-400">Total</p>
+                              <p className="text-xs lg:text-sm text-gray-300 font-medium">Total</p>
             </CardContent>
           </Card>
           
           <Card className="card" style={{ animationDelay: '100ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-emerald-400">{stats.online}</div>
-              <p className="text-xs lg:text-sm text-gray-400">Online</p>
+                              <p className="text-xs lg:text-sm text-gray-300 font-medium">Online</p>
             </CardContent>
           </Card>
           
           <Card className="card" style={{ animationDelay: '200ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-amber-400">{stats.warning}</div>
-              <p className="text-xs lg:text-sm text-gray-400">Warning</p>
+                              <p className="text-xs lg:text-sm text-gray-300 font-medium">Warning</p>
             </CardContent>
           </Card>
           
           <Card className="card" style={{ animationDelay: '300ms' }}>
             <CardContent className="p-3 lg:p-4 text-center">
               <div className="text-xl lg:text-2xl xl:text-3xl font-bold text-red-400">{stats.offline}</div>
-              <p className="text-xs lg:text-sm text-gray-400">Offline</p>
+                              <p className="text-xs lg:text-sm text-gray-300 font-medium">Offline</p>
             </CardContent>
           </Card>
         </div>
