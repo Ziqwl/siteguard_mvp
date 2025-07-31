@@ -84,7 +84,7 @@ export function DashboardLayout({
   };
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
               <div className={`
           fixed inset-y-0 left-0 z-50 w-72 lg:w-80 xl:w-96
@@ -92,7 +92,7 @@ export function DashboardLayout({
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:translate-x-0 lg:static lg:inset-0
-                     bg-gradient-to-b from-gray-900/95 via-gray-800/95 to-gray-900/95
+                     bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
         `}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
