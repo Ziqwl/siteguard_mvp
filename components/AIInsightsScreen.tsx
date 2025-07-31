@@ -260,7 +260,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-lg text-white">{insight.title}</CardTitle>
-                        <CardDescription className="text-white/70">{insight.description}</CardDescription>
+                        <CardDescription className="text-gray-400">{insight.description}</CardDescription>
                       </div>
                     </div>
                     
@@ -272,7 +272,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                         {insight.severity.toUpperCase()}
                       </Badge>
                       <div className={`w-3 h-3 rounded-full ${getStatusColor(insight.status)}`} />
-                      <span className="text-sm text-white/70">
+                      <span className="text-sm text-gray-400">
                         {insight.status.charAt(0).toUpperCase() + insight.status.slice(1)}
                       </span>
                       <div className="flex items-center gap-1">
@@ -294,7 +294,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                   
                   <div className="flex items-center gap-2">
                     <div className="text-right">
-                      <p className="text-sm text-white/70">Confidence</p>
+                      <p className="text-sm text-gray-400">Confidence</p>
                       <p className="text-lg font-bold text-white">{insight.confidence}%</p>
                     </div>
                     {insight.status === 'active' && (
@@ -314,12 +314,12 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
-                    <p className="text-white/70 mb-1">Impact</p>
+                    <p className="text-gray-400 mb-1">Impact</p>
                     <p className="text-white font-medium">{insight.impact}</p>
                   </div>
                   {insight.action && (
                     <div>
-                      <p className="text-white/70 mb-1">Recommended Action</p>
+                      <p className="text-gray-400 mb-1">Recommended Action</p>
                       <p className="text-white font-medium">{insight.action}</p>
                     </div>
                   )}
@@ -327,7 +327,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
                 
                 <div className="mt-4">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-white/70">Confidence Level</span>
+                    <span className="text-sm text-gray-400">Confidence Level</span>
                     <span className="text-sm text-white">{insight.confidence}%</span>
                   </div>
                   <Progress value={insight.confidence} className="h-2" />

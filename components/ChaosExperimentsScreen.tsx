@@ -247,7 +247,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                       </div>
                       <div>
                         <CardTitle className="text-lg text-white">{experiment.name}</CardTitle>
-                        <CardDescription className="text-white/70">{experiment.description}</CardDescription>
+                        <CardDescription className="text-gray-400">{experiment.description}</CardDescription>
                       </div>
                     </div>
                     
@@ -259,7 +259,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
                         {experiment.type.toUpperCase()}
                       </Badge>
                       <div className={`w-3 h-3 rounded-full ${getStatusColor(experiment.status)}`} />
-                      <span className="text-sm text-white/70">
+                      <span className="text-sm text-gray-400">
                         {experiment.status.charAt(0).toUpperCase() + experiment.status.slice(1)}
                       </span>
                     </div>
@@ -311,22 +311,22 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-white/70 mb-1">Duration</p>
+                    <p className="text-gray-400 mb-1">Duration</p>
                     <p className="text-white font-medium">{experiment.duration}s</p>
                   </div>
                   <div>
-                    <p className="text-white/70 mb-1">Services Affected</p>
+                    <p className="text-gray-400 mb-1">Services Affected</p>
                     <p className="text-white font-medium">{experiment.results.servicesAffected}</p>
                   </div>
                   <div>
-                    <p className="text-white/70 mb-1">Recovery Time</p>
+                    <p className="text-gray-400 mb-1">Recovery Time</p>
                     <p className="text-white font-medium">{experiment.results.recoveryTime}s</p>
                   </div>
                 </div>
                 
                 {experiment.status === 'completed' && (
                   <div className="mt-4 p-3 rounded-lg bg-white/5 border border-white/10">
-                    <p className="text-sm text-white/70 mb-2">Results Summary</p>
+                    <p className="text-sm text-gray-400 mb-2">Results Summary</p>
                     <p className="text-white">
                       Impact: <span className="font-medium">{experiment.results.impact}</span> | 
                       Recovery: <span className="font-medium">{experiment.results.recoveryTime}s</span>
