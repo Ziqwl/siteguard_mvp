@@ -118,7 +118,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               variant="outline"
               onClick={handleRefresh}
               disabled={isRefreshing}
-              className="btn-secondary"
+              className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200"
             >
               <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
               {isRefreshing ? 'Refreshing...' : 'Refresh'}
@@ -131,7 +131,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
         </div>
 
                 {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {metrics.map((metric, index) => (
             <Card 
               key={index} 
@@ -147,7 +147,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                   <metric.icon className={`h-5 w-5 ${metric.color}`} />
                 </div>
               </CardHeader>
-              <CardContent className="space-y-3">
+              <CardContent className="space-y-4">
                 <div className="flex items-baseline gap-2">
                   <div className="text-2xl font-bold text-white">
                     {metric.value}
@@ -164,7 +164,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           <Card className="card" style={{ animationDelay: '500ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">Quick Stats</CardTitle>

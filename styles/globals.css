@@ -66,6 +66,13 @@
   --mobile-padding: 1rem;
   --tablet-padding: 1.5rem;
   --desktop-padding: 2rem;
+  
+  /* Additional system colors */
+  --input: rgba(255, 255, 255, 0.04);
+  --input-background: rgba(255, 255, 255, 0.04);
+  --switch-background: rgba(255, 255, 255, 0.15);
+  --ring: var(--primary-blue);
+  --radius-mobile: 0.5rem;
 }
 
 @layer utilities {
@@ -285,88 +292,7 @@
 
 
 
-:root {
-  /* Typography */
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-size: 18px;
-  --text-xs: 0.75rem;    /* 12px */
-  --text-sm: 0.875rem;   /* 14px */
-  --text-base: 1rem;     /* 16px */
-  --text-lg: 1.125rem;   /* 18px */
-  --text-xl: 1.25rem;    /* 20px */
-  --text-2xl: 2rem;      /* 32px */
-  
-  /* Responsive Spacing Grid */
-  --spacing-1: 0.25rem;  /* 4px */
-  --spacing-2: 0.5rem;   /* 8px */
-  --spacing-3: 0.75rem;  /* 12px */
-  --spacing-4: 1rem;     /* 16px */
-  --spacing-6: 1.5rem;   /* 24px */
-  --spacing-8: 2rem;     /* 32px */
-  --spacing-12: 3rem;    /* 48px */
-  --spacing-16: 4rem;    /* 64px */
-  
-  /* Mobile-specific spacing */
-  --mobile-padding: 1rem;     /* 16px */
-  --tablet-padding: 1.5rem;   /* 24px */
-  --desktop-padding: 2rem;    /* 32px */
-  
-  /* Modern Color Palette - Electric Blue to Purple */
-  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --gradient-secondary: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
-  --gradient-mobile: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
-  --accent-teal: #667eea;      /* Electric blue */
-  --accent-purple: #764ba2;    /* Deep purple */
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.15);
-  --glass-mobile: rgba(255, 255, 255, 0.12);
-  
-  /* System Colors */
-  --background: #0f0f23;
-  --foreground: #ffffff;
-  --card: rgba(255, 255, 255, 0.08);
-  --card-foreground: #ffffff;
-  --popover: rgba(15, 15, 35, 0.95);
-  --popover-foreground: #ffffff;
-  --primary: var(--accent-teal);
-  --primary-foreground: #ffffff;
-  --secondary: rgba(255, 255, 255, 0.12);
-  --secondary-foreground: #ffffff;
-  --muted: rgba(255, 255, 255, 0.06);
-  --muted-foreground: #a1a1aa;
-  --accent: var(--accent-purple);
-  --accent-foreground: #ffffff;
-  --destructive: #ef4444;
-  --destructive-foreground: #ffffff;
-  --border: #667eea; /* Electric blue border */
-  .border-solid {
-    border-style: solid;
-  }
-  --input: rgba(255, 255, 255, 0.04);
-  --input-background: rgba(255, 255, 255, 0.04);
-  --switch-background: rgba(255, 255, 255, 0.15);
-  --font-weight-medium: 500;
-  --font-weight-normal: 400;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-  --ring: var(--accent-teal);
-  --radius: 0.75rem;
-  --radius-mobile: 0.5rem;
-  
-  /* Touch targets */
-  --touch-target: 44px;
-  --touch-target-small: 32px;
-  
-  /* Sidebar */
-  --sidebar: rgba(255, 255, 255, 0.02);
-  --sidebar-foreground: #f8fafc;
-  --sidebar-primary: var(--accent-teal);
-  --sidebar-primary-foreground: #134e4a;
-  --sidebar-accent: rgba(255, 255, 255, 0.04);
-  --sidebar-accent-foreground: #f8fafc;
-  --sidebar-border: rgba(255, 255, 255, 0.08);
-  --sidebar-ring: var(--accent-teal);
-}
+
 
 .dark {
   --background: #0f0f23;

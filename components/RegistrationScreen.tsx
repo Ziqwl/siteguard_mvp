@@ -179,7 +179,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
 
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white/90">Username or Email</Label>
+                    <Label htmlFor="email" className="text-white font-medium">Username or Email</Label>
                     <Input
                       id="email"
                       type="email"
@@ -193,7 +193,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="password" className="text-white/90">Password</Label>
+                    <Label htmlFor="password" className="text-white font-medium">Password</Label>
                     <Input
                       id="password"
                       type="password"
@@ -207,7 +207,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="confirmPassword" className="text-white/90">Confirm Password</Label>
+                    <Label htmlFor="confirmPassword" className="text-white font-medium">Confirm Password</Label>
                     <Input
                       id="confirmPassword"
                       type="password"

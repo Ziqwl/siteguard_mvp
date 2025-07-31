@@ -87,7 +87,7 @@ export function DashboardLayout({
     <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
               <div className={`
-          fixed inset-y-0 left-0 z-50 w-72 lg:w-80 xl:w-96
+                                         fixed inset-y-0 left-0 z-50 w-64 sm:w-72 lg:w-80 xl:w-96
           glass-strong border-r border-white/20 
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
