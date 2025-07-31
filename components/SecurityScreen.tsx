@@ -141,7 +141,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
         <div className="space-y-6">
           <h3 className="text-lg font-semibold text-white">Recent Security Scans</h3>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
             
             {mockScans.map((scan, index) => (
               <Card key={scan.id} className="card" style={{ animationDelay: `${index * 100}ms` }}>

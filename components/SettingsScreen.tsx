@@ -51,9 +51,9 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6 md:space-y-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
               <div className="space-y-2">
-                <Label htmlFor="firstName" className="text-white/90">First Name</Label>
+                <Label htmlFor="firstName" className="text-white font-medium">First Name</Label>
                 <Input
                   id="firstName"
                   defaultValue="John"
@@ -61,7 +61,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="lastName" className="text-white/90">Last Name</Label>
+                <Label htmlFor="lastName" className="text-white font-medium">Last Name</Label>
                 <Input
                   id="lastName"
                   defaultValue="Doe"
@@ -71,7 +71,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-white/90">Email</Label>
+              <Label htmlFor="email" className="text-white font-medium">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -81,7 +81,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="company" className="text-white/90">Company</Label>
+              <Label htmlFor="company" className="text-white font-medium">Company</Label>
               <Input
                 id="company"
                 defaultValue="Acme Corp"
@@ -146,7 +146,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             
             <div className="space-y-6 md:space-y-8">
               <div className="space-y-2">
-                <Label className="text-white/90">Notification Frequency</Label>
+                <Label className="text-white font-medium">Notification Frequency</Label>
                 <Select defaultValue="immediate">
                   <SelectTrigger className="glass border-white/20 text-white">
                     <SelectValue />

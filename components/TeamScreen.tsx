@@ -161,7 +161,7 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
         </div>
 
         {/* Team Members */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {filteredMembers.map((member, index) => (
             <Card key={member.id} className="glass border-white/10 hover:border-white/20 transition-all duration-300 animate-slide-in-up" style={{ animationDelay: `${index * 100}ms` }}>
               <CardContent className="p-6">
@@ -217,7 +217,7 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
               <Input
                 placeholder="Email address"
                 className="glass border-white/20 text-white placeholder:text-white/50"
