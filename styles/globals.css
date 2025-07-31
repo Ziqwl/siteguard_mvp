@@ -123,7 +123,7 @@
   .btn-primary:hover, .btn-primary:focus {
     background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
     box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.02);
   }
   
   .btn-primary:focus-visible {
@@ -452,7 +452,7 @@
 
 html {
   font-size: var(--font-size);
-  transition: all duration-300 ease-in-out;
+  transition: background-color 0.3s, color 0.3s;
   
   /* Mobile font size adjustment */
   @media (max-width: 640px) {

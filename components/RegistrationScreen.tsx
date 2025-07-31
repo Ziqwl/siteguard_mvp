@@ -168,7 +168,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
           <div className="animate-scale-in order-1 lg:order-2">
             <Card className="card max-w-md mx-auto">
               <CardHeader className="space-y-2 text-center pb-6">
-                <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Create Account</CardTitle>
+                <CardTitle className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">Create Account</CardTitle>
                 <CardDescription className="text-gray-300 text-base sm:text-lg leading-relaxed">
                   Get started with your free account
                 </CardDescription>
@@ -222,7 +222,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                   
                   <Button
                     type="submit"
-                    className="btn-primary w-full"
+                    className="btn-primary w-full min-h-[44px] text-base font-semibold"
                     disabled={isLoading}
                   >
                     {isLoading ? (

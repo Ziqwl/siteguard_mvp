@@ -87,7 +87,7 @@ export function DashboardLayout({
     <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
               <div className={`
-                                         fixed inset-y-0 left-0 z-50 w-64 sm:w-72 lg:w-80 xl:w-96
+                                         fixed inset-y-0 left-0 z-50 w-16 sm:w-64 lg:w-80 xl:w-96
           glass-strong border-r border-white/20 
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
@@ -127,20 +127,21 @@ export function DashboardLayout({
                     key={index}
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
-                                          className={`
+                                                                className={`
                         w-full flex items-center gap-3 lg:gap-4 px-5 lg:px-6 py-5 lg:py-6 
                         rounded-2xl text-left transition-all duration-200 ease-out
                         touch-manipulation min-h-[56px] lg:min-h-[60px]
                         ${item.disabled 
                           ? 'text-white/30 cursor-not-allowed opacity-50' 
                           : currentScreen === item.screen 
-                                                       ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
-                             : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
+                                                        ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
+                              : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
                         }
                       `}
+                      title={item.disabled ? "Coming in Q4 2025" : undefined}
                   >
-                    <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                    <span className="font-medium text-sm lg:text-base">{item.label}</span>
+                                          <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
+                      <span className="font-medium text-sm lg:text-base hidden sm:inline">{item.label}</span>
                   </button>
                 );
 

@@ -98,7 +98,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
 
       {/* Right side - Login Form */}
       <div className="flex-1 flex items-center justify-center p-6 sm:p-8 lg:p-12">
-        <div className="w-full max-w-md space-y-6 lg:space-y-8">
+        <div className="w-full max-w-md mx-auto space-y-6 lg:space-y-8">
           {/* Theme toggle */}
           <div className="flex justify-end">
             <div className="flex items-center gap-2 lg:gap-3">
@@ -131,7 +131,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
           {/* Login Card */}
           <Card className="card">
             <CardHeader className="space-y-2 pb-6">
-                        <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
+                        <CardTitle className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
             Sign In
           </CardTitle>
           <CardDescription className="text-gray-300 text-center text-base sm:text-lg leading-relaxed">
@@ -189,7 +189,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                 <Button
                   type="submit"
                   disabled={isLoading}
-                  className="btn-primary w-full"
+                  className="btn-primary w-full min-h-[44px] text-base font-semibold"
                 >
                   {isLoading ? (
                     <>
