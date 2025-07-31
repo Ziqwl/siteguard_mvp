@@ -12,7 +12,7 @@ interface DocsPageProps {
 
 export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Header */}
       <header className="glass-strong border-b border-white/10 px-4 lg:px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
@@ -30,13 +30,13 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
             <Button
               variant="ghost"
               onClick={() => onNavigate('login')}
-              className="text-white/70 hover:text-white"
+              className="text-gray-400 hover:text-white min-h-[44px]"
             >
               Sign In
             </Button>
             <Button
               onClick={() => onNavigate('register')}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="btn-primary min-h-[44px]"
             >
               Register
             </Button>
@@ -52,17 +52,17 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
             <h1 className="text-4xl lg:text-5xl font-bold text-white">
               SiteGuard MVP
             </h1>
-            <p className="text-xl lg:text-2xl text-white/70 max-w-3xl mx-auto">
+            <p className="text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto">
               Website Security & Monitoring Platform
             </p>
-            <p className="text-lg text-white/60 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Comprehensive website security monitoring and threat detection platform designed to protect your digital assets with real-time monitoring, security scanning, and automated alerts.
             </p>
           </div>
 
           {/* Features Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="glass border-white/10">
+            <Card className="card">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
@@ -70,7 +70,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <ul className="space-y-2 text-white/80">
+                <ul className="space-y-2 text-gray-400">
                   <li>• Real-time website uptime monitoring</li>
                   <li>• SSL certificate expiration tracking</li>
                   <li>• Security vulnerability scanning</li>
@@ -79,7 +79,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
               </CardContent>
             </Card>
 
-            <Card className="glass border-white/10">
+            <Card className="card">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />
@@ -87,7 +87,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <ul className="space-y-2 text-white/80">
+                <ul className="space-y-2 text-gray-400">
                   <li>• Live security metrics</li>
                   <li>• Performance monitoring</li>
                   <li>• Custom alert configurations</li>
@@ -96,7 +96,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
               </CardContent>
             </Card>
 
-            <Card className="glass border-white/10">
+            <Card className="card">
               <CardHeader>
                 <CardTitle className="text-white flex items-center gap-2">
                   <Shield className="h-5 w-5 text-primary" />

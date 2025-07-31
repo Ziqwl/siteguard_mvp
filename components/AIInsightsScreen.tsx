@@ -170,35 +170,35 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
       isDarkMode={isDarkMode}
       currentScreen={currentScreen}
     >
-      <div className="w-full">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2">AI Insights</h1>
-              <p className="text-white/70 text-sm lg:text-base">Predictive analytics and intelligent recommendations</p>
+              <p className="text-gray-400 text-sm lg:text-base">Predictive analytics and intelligent recommendations</p>
             </div>
-                          <Button 
-                className="btn-primary"
-                onClick={() => {/* TODO: Refresh insights */}}
-              >
-                <Brain className="h-4 w-4" />
-                Refresh Analysis
-              </Button>
+            <Button 
+              className="btn-primary min-h-[44px]"
+              onClick={() => {/* TODO: Refresh insights */}}
+            >
+              <Brain className="h-4 w-4" />
+              Refresh Analysis
+            </Button>
           </div>
           
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8">
             <Card className="card">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Active Insights</p>
+                    <p className="text-sm text-gray-400">Active Insights</p>
                     <p className="text-2xl font-bold text-white">{activeInsights.length}</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-emerald-500/20">
-                     <Brain className="h-6 w-6 text-emerald-400" />
-                   </div>
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <Brain className="h-5 w-5 text-emerald-400" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -207,11 +207,11 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Avg Confidence</p>
+                    <p className="text-sm text-gray-400">Avg Confidence</p>
                     <p className="text-2xl font-bold text-white">88%</p>
                   </div>
-                  <div className="p-3 rounded-full bg-green-500/20">
-                    <CheckCircle className="h-6 w-6 text-green-400" />
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <CheckCircle className="h-5 w-5 text-green-400" />
                   </div>
                 </div>
               </CardContent>
@@ -221,11 +221,11 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Predictions</p>
+                    <p className="text-sm text-gray-400">Predictions</p>
                     <p className="text-2xl font-bold text-white">12</p>
                   </div>
-                  <div className="p-3 rounded-full bg-purple-500/20">
-                    <TrendingUp className="h-6 w-6 text-purple-400" />
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <TrendingUp className="h-5 w-5 text-purple-400" />
                   </div>
                 </div>
               </CardContent>
@@ -235,11 +235,11 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Auto-Resolved</p>
+                    <p className="text-sm text-gray-400">Auto-Resolved</p>
                     <p className="text-2xl font-bold text-white">{resolvedInsights.length}</p>
                   </div>
-                  <div className="p-3 rounded-full bg-orange-500/20">
-                    <Zap className="h-6 w-6 text-orange-400" />
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <Zap className="h-5 w-5 text-orange-400" />
                   </div>
                 </div>
               </CardContent>
@@ -248,7 +248,7 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
         </div>
 
         {/* AI Insights List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {insights.map((insight) => (
             <Card key={insight.id} className="card group hover:scale-[1.02] transition-transform">
               <CardHeader className="pb-4">

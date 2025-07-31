@@ -157,35 +157,35 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
       isDarkMode={isDarkMode}
       currentScreen={currentScreen}
     >
-      <div className="w-full">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
             <div>
               <h1 className="text-2xl lg:text-3xl font-bold text-white mb-2">Chaos Experiments</h1>
-              <p className="text-white/70 text-sm lg:text-base">Test your system's resilience with controlled chaos</p>
+              <p className="text-gray-400 text-sm lg:text-base">Test your system's resilience with controlled chaos</p>
             </div>
-                          <Button 
-                className="btn-primary"
-                onClick={() => {/* TODO: Add new experiment modal */}}
-              >
-                <Zap className="h-4 w-4" />
-                New Experiment
-              </Button>
+            <Button 
+              className="btn-primary min-h-[44px]"
+              onClick={() => {/* TODO: Add new experiment modal */}}
+            >
+              <Zap className="h-4 w-4" />
+              New Experiment
+            </Button>
           </div>
           
           {/* Stats Cards */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-8">
             <Card className="card">
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Active Experiments</p>
+                    <p className="text-sm text-gray-400">Active Experiments</p>
                     <p className="text-2xl font-bold text-white">1</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-emerald-500/20">
-                     <Play className="h-6 w-6 text-emerald-400" />
-                   </div>
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <Play className="h-5 w-5 text-emerald-400" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -194,12 +194,12 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Completed Today</p>
+                    <p className="text-sm text-gray-400">Completed Today</p>
                     <p className="text-2xl font-bold text-white">3</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-blue-500/20">
-                     <CheckCircle className="h-6 w-6 text-blue-400" />
-                   </div>
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <CheckCircle className="h-5 w-5 text-blue-400" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -208,12 +208,12 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Success Rate</p>
+                    <p className="text-sm text-gray-400">Success Rate</p>
                     <p className="text-2xl font-bold text-white">87%</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-purple-500/20">
-                     <BarChart3 className="h-6 w-6 text-purple-400" />
-                   </div>
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <BarChart3 className="h-5 w-5 text-purple-400" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -222,12 +222,12 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
               <CardContent className="p-4">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm text-white/70">Avg Recovery</p>
+                    <p className="text-sm text-gray-400">Avg Recovery</p>
                     <p className="text-2xl font-bold text-white">65s</p>
                   </div>
-                                     <div className="p-3 rounded-full bg-orange-500/20">
-                     <Clock className="h-6 w-6 text-orange-400" />
-                   </div>
+                  <div className="p-3 rounded-lg bg-gray-800/50">
+                    <Clock className="h-5 w-5 text-orange-400" />
+                  </div>
                 </div>
               </CardContent>
             </Card>
@@ -235,7 +235,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
         </div>
 
         {/* Experiments List */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
           {experiments.map((experiment) => (
             <Card key={experiment.id} className="card group hover:scale-[1.02] transition-transform">
               <CardHeader className="pb-4">
