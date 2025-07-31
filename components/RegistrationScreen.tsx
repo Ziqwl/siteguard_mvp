@@ -96,7 +96,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0A0A0A]">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Theme toggle */}
       <div className="absolute top-4 right-4 z-10">
         <div className="flex items-center gap-2 lg:gap-3">
@@ -166,7 +166,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
 
           {/* Registration Form */}
           <div className="animate-scale-in order-1 lg:order-2">
-            <Card className="glass-strong border-white/20 shadow-2xl">
+            <Card className="card">
               <CardHeader className="space-y-2 text-center pb-6">
                 <CardTitle className="text-2xl lg:text-3xl font-bold text-white">Create Account</CardTitle>
                 <CardDescription className="text-white/70 text-base">
@@ -186,7 +186,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                       placeholder="Enter your username or email"
                       value={formData.email}
                       onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
+                      className="h-12 lg:h-14 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
                       required
                     />
@@ -200,7 +200,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                       placeholder="Create a password"
                       value={formData.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
+                      className="h-12 lg:h-14 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
                       required
                     />
@@ -214,7 +214,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
                       placeholder="Confirm your password"
                       value={formData.confirmPassword}
                       onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                      className="h-12 lg:h-14 glass border-white/20 text-white placeholder:text-white/50"
+                      className="h-12 lg:h-14 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
                       required
                     />

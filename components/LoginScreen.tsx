@@ -78,12 +78,12 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-[#0A0A0A]">
+    <div className="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Left side - Branding (hidden on mobile) */}
       <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 p-8 xl:p-12 items-center justify-center relative overflow-hidden">
         <div className="relative z-10 max-w-md text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 xl:w-20 xl:h-20 rounded-xl xl:rounded-2xl bg-blue-500/10 ring-1 ring-blue-500/20 mb-8">
-            <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-blue-400" />
+          <div className="inline-flex items-center justify-center w-16 h-16 xl:w-20 xl:h-20 rounded-xl xl:rounded-2xl bg-indigo-500/10 ring-1 ring-indigo-500/20 mb-8">
+            <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-indigo-400" />
           </div>
           
           <h1 className="text-2xl xl:text-3xl font-bold text-white mb-4">
@@ -121,8 +121,8 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
 
           {/* Mobile branding */}
           <div className="text-center lg:hidden">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-blue-500/10 ring-1 ring-blue-500/20 mb-4">
-              <Shield className="w-8 h-8 text-blue-400" />
+                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-indigo-500/10 ring-1 ring-indigo-500/20 mb-4">
+            <Shield className="w-8 h-8 text-indigo-400" />
             </div>
             <h1 className="text-2xl font-bold text-white mb-2">SiteGuard</h1>
             <p className="text-gray-400">Secure your digital presence</p>
@@ -152,7 +152,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com or username"
-                      className="pl-10 h-11 bg-[#1A1A1A] border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
+                      className="pl-10 h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
                     />
                   </div>
@@ -169,7 +169,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Enter your password"
-                      className="pl-10 pr-12 h-11 bg-[#1A1A1A] border-gray-700 text-white placeholder:text-gray-500 focus:border-blue-500 focus:ring-blue-500"
+                      className="pl-10 pr-12 h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
                     />
                     <Button
