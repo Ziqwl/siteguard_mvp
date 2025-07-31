@@ -84,7 +84,7 @@ export function DashboardLayout({
   };
 
   return (
-    <div className="min-h-screen flex bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+    <div className="min-h-screen flex bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
       {/* Sidebar */}
               <div className={`
           fixed inset-y-0 left-0 z-50 w-72 lg:w-80 xl:w-96
@@ -92,14 +92,14 @@ export function DashboardLayout({
           transform transition-transform duration-300 ease-in-out
           ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
           lg:translate-x-0 lg:static lg:inset-0
-                     bg-gradient-to-b from-slate-900/95 via-slate-800/95 to-slate-900/95
+                     bg-gradient-to-b from-gray-900/95 via-gray-800/95 to-gray-900/95
         `}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-                           <div className="p-2 rounded-xl bg-[#3B82F6]/20 ring-1 ring-[#3B82F6]/30">
-               <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-[#3B82F6]" />
+                           <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
+               <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-indigo-400" />
               </div>
               <div>
                 <h1 className="font-bold text-white text-lg lg:text-xl">SiteGuard</h1>
@@ -134,8 +134,8 @@ export function DashboardLayout({
                       ${item.disabled 
                         ? 'text-white/30 cursor-not-allowed opacity-50' 
                         : currentScreen === item.screen 
-                                                     ? 'bg-gradient-to-r from-[#3B82F6]/30 to-[#8B5CF6]/30 text-white border border-[#3B82F6]/50 shadow-lg shadow-[#3B82F6]/20 backdrop-blur-sm' 
-                           : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-[#3B82F6]/10 hover:to-[#8B5CF6]/15 hover:shadow-lg hover:shadow-[#3B82F6]/15 hover:backdrop-blur-sm'
+                                                     ? 'bg-gradient-to-r from-indigo-500/30 to-purple-500/30 text-white border border-indigo-500/50 shadow-lg shadow-indigo-500/20 backdrop-blur-sm' 
+                           : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/10 hover:to-purple-500/15 hover:shadow-lg hover:shadow-indigo-500/15 hover:backdrop-blur-sm'
                       }
                     `}
                   >
