@@ -36,10 +36,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+3',
       trend: 'up',
       icon: Globe,
-                 color: 'text-blue-400',
-           bgColor: 'bg-gradient-to-br from-blue-400/30 to-blue-500/20',
-           borderColor: 'border-blue-400/40',
-           gradient: 'from-blue-400 to-blue-500',
+                 color: 'text-indigo-400',
+           bgColor: 'bg-gradient-to-br from-indigo-400/30 to-indigo-500/20',
+           borderColor: 'border-indigo-400/40',
+           gradient: 'from-indigo-400 to-indigo-500',
       onClick: () => onNavigate('monitors')
     },
     {
@@ -48,10 +48,10 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       change: '+12',
       trend: 'up',
       icon: Shield,
-                 color: 'text-orange-400',
-           bgColor: 'bg-gradient-to-br from-orange-400/30 to-orange-500/20',
-           borderColor: 'border-orange-400/40',
-           gradient: 'from-orange-400 to-orange-500',
+                 color: 'text-purple-400',
+           bgColor: 'bg-gradient-to-br from-purple-400/30 to-purple-500/20',
+           borderColor: 'border-purple-400/40',
+           gradient: 'from-purple-400 to-purple-500',
       onClick: () => onNavigate('security')
     }
   ];
