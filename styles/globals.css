@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Modern Dark Theme - как у Login/Registration */
-  --primary-blue: #6366F1;
-  --primary-purple: #8B5CF6;
+  /* Modern Dark Theme - улучшенные цвета для лучшего контраста */
+  --primary-blue: #3B82F6;
+  --primary-purple: #7C3AED;
   --accent-teal: #10B981;
   --accent-orange: #F59E0B;
   --accent-red: #EF4444;
@@ -20,8 +20,8 @@
   --color-accent-yellow: 245 158 11;
   --color-accent-green: 16 185 129;
   
-  /* Элегантные градиенты */
-  --gradient-primary: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+  /* Элегантные градиенты - улучшенные для лучшего контраста */
+  --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%);
   --gradient-secondary: linear-gradient(135deg, #10B981 0%, #F59E0B 100%);
   --gradient-dark: linear-gradient(135deg, #0A0A0A 0%, #1A1A1A 100%);
   
@@ -70,11 +70,11 @@
 
 @layer utilities {
   .btn-primary {
-    background: linear-gradient(135deg, #6366F1 0%, #8B5CF6 100%);
+    background: linear-gradient(135deg, #3B82F6 0%, #7C3AED 100%);
     color: white;
     border: none;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
     font-weight: 600;
     padding: 12px 24px;
     font-size: 14px;
@@ -114,9 +114,9 @@
   }
   
   .btn-primary:hover, .btn-primary:focus {
-    background: linear-gradient(135deg, #1D4ED8 0%, #6D28D9 100%);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4);
-    transform: translateY(-1px);
+    background: linear-gradient(135deg, #7C3AED 0%, #3B82F6 100%);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.4);
+    transform: translateY(-2px);
   }
   
   .btn-primary:focus-visible {

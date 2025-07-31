@@ -131,12 +131,12 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
           {/* Login Card */}
           <Card className="card">
             <CardHeader className="space-y-2 pb-6">
-              <CardTitle className="text-2xl lg:text-3xl font-bold text-white text-center">
-                Sign In
-              </CardTitle>
-              <CardDescription className="text-gray-400 text-center text-base">
-                Access your security dashboard
-              </CardDescription>
+                        <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center">
+            Sign In
+          </CardTitle>
+          <CardDescription className="text-gray-300 text-center text-base sm:text-lg leading-relaxed">
+            Access your security dashboard
+          </CardDescription>
             </CardHeader>
             
             <CardContent>

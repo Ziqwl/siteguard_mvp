@@ -166,10 +166,10 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
 
           {/* Registration Form */}
           <div className="animate-scale-in order-1 lg:order-2">
-            <Card className="card">
+            <Card className="card max-w-md mx-auto">
               <CardHeader className="space-y-2 text-center pb-6">
-                <CardTitle className="text-2xl lg:text-3xl font-bold text-white">Create Account</CardTitle>
-                <CardDescription className="text-white/70 text-base">
+                <CardTitle className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Create Account</CardTitle>
+                <CardDescription className="text-gray-300 text-base sm:text-lg leading-relaxed">
                   Get started with your free account
                 </CardDescription>
               </CardHeader>

@@ -125,13 +125,13 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
             </Button>
           </div>
           
-          <div className="text-sm text-gray-400 text-center sm:text-right">
+          <div className="text-sm font-medium text-gray-300 text-center sm:text-right">
             Last updated: {new Date().toLocaleTimeString()}
           </div>
         </div>
 
                 {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-8">
           {metrics.map((metric, index) => (
             <Card 
               key={index} 
@@ -164,7 +164,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 lg:gap-8">
           <Card className="card" style={{ animationDelay: '500ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">Quick Stats</CardTitle>
@@ -241,7 +241,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                 variant="outline"
                 size="sm"
                 onClick={() => onNavigate('alerts')}
-                className="btn-secondary w-full mt-4"
+                className="btn-secondary w-full mt-4 hover:bg-gray-800/50 hover:border-gray-500 hover:text-white transition-all duration-200 hover:shadow-md"
               >
                 View All Alerts
               </Button>

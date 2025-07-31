@@ -127,17 +127,17 @@ export function DashboardLayout({
                     key={index}
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
-                    className={`
-                      w-full flex items-center gap-3 lg:gap-4 px-5 lg:px-6 py-5 lg:py-6 
-                      rounded-2xl text-left transition-all duration-300 ease-out
-                      touch-manipulation min-h-[56px] lg:min-h-[60px]
-                      ${item.disabled 
-                        ? 'text-white/30 cursor-not-allowed opacity-50' 
-                        : currentScreen === item.screen 
-                                                     ? 'bg-gradient-to-r from-indigo-500/30 to-purple-500/30 text-white border border-indigo-500/50 shadow-lg shadow-indigo-500/20 backdrop-blur-sm' 
-                           : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/10 hover:to-purple-500/15 hover:shadow-lg hover:shadow-indigo-500/15 hover:backdrop-blur-sm'
-                      }
-                    `}
+                                          className={`
+                        w-full flex items-center gap-3 lg:gap-4 px-5 lg:px-6 py-5 lg:py-6 
+                        rounded-2xl text-left transition-all duration-200 ease-out
+                        touch-manipulation min-h-[56px] lg:min-h-[60px]
+                        ${item.disabled 
+                          ? 'text-white/30 cursor-not-allowed opacity-50' 
+                          : currentScreen === item.screen 
+                                                       ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
+                             : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
+                        }
+                      `}
                   >
                     <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
                     <span className="font-medium text-sm lg:text-base">{item.label}</span>
