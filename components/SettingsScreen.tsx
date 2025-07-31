@@ -46,7 +46,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <User className="h-5 w-5 text-primary" />
               Profile Settings
             </CardTitle>
-            <CardDescription className="text-white/60">
+            <CardDescription className="text-gray-400">
               Manage your personal information
             </CardDescription>
           </CardHeader>
@@ -103,7 +103,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <Bell className="h-5 w-5 text-primary" />
               Notification Settings
             </CardTitle>
-            <CardDescription className="text-white/60">
+            <CardDescription className="text-gray-400">
               Configure how you receive notifications
             </CardDescription>
           </CardHeader>
@@ -112,7 +112,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">Email Notifications</div>
-                  <div className="text-sm text-white/60">Receive alerts via email</div>
+                  <div className="text-sm text-gray-400">Receive alerts via email</div>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -120,7 +120,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">SMS Notifications</div>
-                  <div className="text-sm text-white/60">Get urgent alerts via SMS</div>
+                  <div className="text-sm text-gray-400">Get urgent alerts via SMS</div>
                 </div>
                 <Switch />
               </div>
@@ -128,7 +128,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">Weekly Reports</div>
-                  <div className="text-sm text-white/60">Weekly summary emails</div>
+                  <div className="text-sm text-gray-400">Weekly summary emails</div>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -136,7 +136,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
                   <div className="font-medium text-white">Security Alerts</div>
-                  <div className="text-sm text-white/60">Critical security notifications</div>
+                  <div className="text-sm text-gray-400">Critical security notifications</div>
                 </div>
                 <Switch defaultChecked />
               </div>

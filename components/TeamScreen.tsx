@@ -116,28 +116,28 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
           <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]">
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-white">{teamStats.total}</div>
-              <p className="text-sm text-white/60">Team Members</p>
+              <p className="text-sm text-gray-400">Team Members</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in rounded-[var(--radius)] md:rounded-[var(--radius-mobile)]" style={{ animationDelay: '100ms' }}>
+          <Card className="card" style={{ animationDelay: '100ms' }}>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-emerald-400">{teamStats.active}</div>
-              <p className="text-sm text-white/60">Active</p>
+              <p className="text-sm text-gray-400">Active</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '200ms' }}>
+          <Card className="card" style={{ animationDelay: '200ms' }}>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-primary">{teamStats.admins}</div>
-              <p className="text-sm text-white/60">Admins</p>
+              <p className="text-sm text-gray-400">Admins</p>
             </CardContent>
           </Card>
           
-          <Card className="glass border-white/10 animate-scale-in" style={{ animationDelay: '300ms' }}>
+          <Card className="card" style={{ animationDelay: '300ms' }}>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-blue-400">{teamStats.editors}</div>
-              <p className="text-sm text-white/60">Editors</p>
+              <p className="text-sm text-gray-400">Editors</p>
             </CardContent>
           </Card>
         </div>
@@ -176,7 +176,7 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
                     
                     <div className="space-y-1">
                       <h4 className="font-medium text-white">{member.name}</h4>
-                      <div className="flex items-center gap-1 text-sm text-white/60">
+                      <div className="flex items-center gap-1 text-sm text-gray-400">
                         <Mail className="h-3 w-3" />
                         {member.email}
                       </div>
@@ -193,9 +193,9 @@ export function TeamScreen({ onNavigate, onToggleTheme, isDarkMode, currentScree
                   </div>
                   
                   <div className="text-right space-y-1">
-                    <div className="text-sm text-white/60">{member.lastSeen}</div>
-                    <div className="text-xs text-white/40">Joined {member.joinedDate}</div>
-                    <Button variant="ghost" size="sm" className="text-white/60 hover:text-white">
+                    <div className="text-sm text-gray-400">{member.lastSeen}</div>
+                    <div className="text-xs text-gray-500">Joined {member.joinedDate}</div>
+                    <Button variant="ghost" size="sm" className="text-gray-400 hover:text-white">
                       <MoreHorizontal className="h-4 w-4" />
                     </Button>
                   </div>

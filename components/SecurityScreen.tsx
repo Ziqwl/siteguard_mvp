@@ -152,7 +152,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                       <Globe className="h-5 w-5 text-primary" />
                       {scan.website}
                     </CardTitle>
-                    <CardDescription className="text-white/60">
+                    <CardDescription className="text-gray-400">
                       Last scan: {scan.lastScan} • Next: {scan.nextScan}
                     </CardDescription>
                   </div>
@@ -164,7 +164,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                 {scan.status === 'scanning' ? (
                   <div className="space-y-2">
                     <div className="flex justify-between text-sm">
-                      <span className="text-white/70">Scanning progress</span>
+                      <span className="text-gray-400">Scanning progress</span>
                       <span className="text-white">{scan.progress}%</span>
                     </div>
                     <Progress value={scan.progress} className="h-2" />
@@ -173,13 +173,13 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
                   <>
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-1">
-                        <div className="text-xs text-white/60">Security Score</div>
+                        <div className="text-xs text-gray-400">Security Score</div>
                         <div className={`text-2xl font-bold ${getScoreColor(scan.score!)}`}>
                           {scan.score}/100
                         </div>
                       </div>
                       <div className="space-y-1">
-                        <div className="text-xs text-white/60">Vulnerabilities</div>
+                        <div className="text-xs text-gray-400">Vulnerabilities</div>
                         <div className="text-2xl font-bold text-white flex items-center gap-2">
                           {scan.vulnerabilities}
                           {scan.vulnerabilities! > 0 && (
@@ -191,16 +191,16 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
 
                     {scan.issues && scan.issues.length > 0 && (
                       <div className="space-y-2">
-                        <div className="text-sm font-medium text-white/80">Critical Issues:</div>
+                        <div className="text-sm font-medium text-white">Critical Issues:</div>
                         <div className="space-y-1">
                           {scan.issues.slice(0, 2).map((issue, issueIndex) => (
-                            <div key={issueIndex} className="flex items-center gap-2 text-sm text-white/70">
+                            <div key={issueIndex} className="flex items-center gap-2 text-sm text-gray-400">
                               <div className="w-1.5 h-1.5 rounded-full bg-red-400" />
                               {issue}
                             </div>
                           ))}
                           {scan.issues.length > 2 && (
-                            <div className="text-xs text-white/50">
+                            <div className="text-xs text-gray-500">
                               +{scan.issues.length - 2} more issues
                             </div>
                           )}

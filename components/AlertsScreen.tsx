@@ -206,10 +206,10 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
                       {getStatusIcon(alert.status)}
                       <div className="space-y-1 flex-1">
                         <h3 className="text-white">{alert.title}</h3>
-                        <p className="text-white/70">
+                        <p className="text-gray-400">
                           {alert.description}
                         </p>
-                        <div className="flex items-center gap-3 text-sm text-white/50">
+                        <div className="flex items-center gap-3 text-sm text-gray-500">
                           <span>{alert.source}</span>
                           <span>•</span>
                           <span>{alert.timestamp}</span>
@@ -222,7 +222,7 @@ export function AlertsScreen({ onNavigate, onToggleTheme, isDarkMode, currentScr
                     <div className={`${getSeverityColor(alert.severity)} px-2.5 py-1 rounded-full text-sm capitalize`}>
                       {alert.severity}
                     </div>
-                    <div className="border text-white/70 border-white/20 px-2.5 py-1 rounded-full text-sm capitalize">
+                    <div className="border text-gray-400 border-gray-600 px-2.5 py-1 rounded-full text-sm capitalize">
                       {alert.status}
                     </div>
                   </div>
