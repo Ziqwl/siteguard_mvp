@@ -15,7 +15,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
     <div className="min-h-screen bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Header */}
       <header className="glass-strong border-b border-white/10 px-4 lg:px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center justify-between">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2 rounded-xl bg-primary/20 ring-1 ring-primary/30">
               <Shield className="h-6 w-6 text-primary" />
@@ -45,7 +45,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
       </header>
 
       {/* Main Content */}
-      <main className="w-full max-w-4xl mx-auto px-2 sm:px-4 md:px-8 py-8">
+      <main className="w-full max-w-6xl mx-auto px-2 sm:px-4 md:px-8 py-8">
         <div className="space-y-8">
           {/* Hero Section */}
           <div className="text-center space-y-6">
@@ -284,7 +284,7 @@ export function DocsPage({ onNavigate, onToggleTheme, isDarkMode }: DocsPageProp
 
       {/* Footer */}
       <footer className="border-t border-white/10 p-6 mt-12">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-6xl mx-auto text-center">
           <p className="text-white/60 text-sm">
             © 2025 SiteGuard. All rights reserved. | Protecting your digital presence since 2025
           </p>

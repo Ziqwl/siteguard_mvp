@@ -157,7 +157,7 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
       isDarkMode={isDarkMode}
       currentScreen={currentScreen}
     >
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}
         <div className="mb-8">
           <div className="flex items-center justify-between mb-4">
