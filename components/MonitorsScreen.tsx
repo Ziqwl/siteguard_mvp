@@ -213,7 +213,7 @@ export function MonitorsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
             
             <Button 
               onClick={() => setShowAddModal(true)}
-              className="btn-primary"
+              className="btn-primary min-h-[44px]"
             >
               <Plus className="h-4 w-4" />
               Add Monitor

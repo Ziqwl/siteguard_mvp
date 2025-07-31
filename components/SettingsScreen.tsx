@@ -89,7 +89,7 @@ export function SettingsScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
               />
             </div>
             
-            <Button className="btn-primary">
+            <Button className="btn-primary min-h-[44px]">
               <Save className="h-4 w-4" />
               Save Changes
             </Button>

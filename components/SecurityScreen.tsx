@@ -127,7 +127,7 @@ export function SecurityScreen({ onNavigate, onToggleTheme, isDarkMode, currentS
 
         {/* Quick Actions */}
         <div className="flex gap-4">
-          <Button className="btn-primary">
+          <Button className="btn-primary min-h-[44px]">
             <Scan className="h-4 w-4" />
             Run Full Scan
           </Button>
