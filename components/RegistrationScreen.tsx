@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Switch } from './ui/switch';
-import { Shield, Moon, Sun, Mail, MessageCircle, HelpCircle, Check } from 'lucide-react';
+import { Shield, Moon, Sun, Mail } from 'lucide-react';
 import { AppScreen } from '../App';
 import { useToast } from './ToastNotification';
 
@@ -105,7 +105,7 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
             <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
               <Shield className="h-6 w-6 text-indigo-400" />
             </div>
-            <div>
+            <div className="hidden sm:block">
               <h1 className="font-bold text-white text-lg">SiteGuard</h1>
               <p className="text-xs text-gray-400">Security Dashboard</p>
             </div>
@@ -139,68 +139,64 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
           
           <form onSubmit={handleRegister}>
             <CardContent className="space-y-5 lg:space-y-6">
-
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white font-medium">Email</Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={(e) => handleInputChange('email', e.target.value)}
-                      className="h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
-                      disabled={isLoading}
-                      required
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="password" className="text-white font-medium">Password</Label>
-                    <Input
-                      id="password"
-                      type="password"
-                      placeholder="Create a password"
-                      value={formData.password}
-                      onChange={(e) => handleInputChange('password', e.target.value)}
-                      className="h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
-                      disabled={isLoading}
-                      required
-                    />
-                  </div>
-                  
-                  {/* Action Buttons */}
-                  <div className="space-y-3">
-                    <Button
-                      type="submit"
-                      className="btn-primary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <>
-                          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                          Creating Account...
-                        </>
-                      ) : (
-                        'Create Account'
-                      )}
-                    </Button>
-                    
-                    <Button
-                      type="button"
-                      variant="outline"
-                      onClick={() => onNavigate('login')}
-                      disabled={isLoading}
-                      className="btn-secondary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
-                    >
-                      Sign In
-                    </Button>
-                  </div>
-                </CardContent>
-              </form>
-            </Card>
-          </div>
-        </div>
+              <div className="space-y-2">
+                <Label htmlFor="email" className="text-white font-medium">Email</Label>
+                <Input
+                  id="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  value={formData.email}
+                  onChange={(e) => handleInputChange('email', e.target.value)}
+                  className="h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
+                  disabled={isLoading}
+                  required
+                />
+              </div>
+              
+              <div className="space-y-2">
+                <Label htmlFor="password" className="text-white font-medium">Password</Label>
+                <Input
+                  id="password"
+                  type="password"
+                  placeholder="Create a password"
+                  value={formData.password}
+                  onChange={(e) => handleInputChange('password', e.target.value)}
+                  className="h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
+                  disabled={isLoading}
+                  required
+                />
+              </div>
+              
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <Button
+                  type="submit"
+                  className="btn-primary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                      Creating Account...
+                    </>
+                  ) : (
+                    'Create Account'
+                  )}
+                </Button>
+                
+                <Button
+                  type="button"
+                  variant="outline"
+                  onClick={() => onNavigate('login')}
+                  disabled={isLoading}
+                  className="btn-secondary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
+                >
+                  Sign In
+                </Button>
+              </div>
+            </CardContent>
+          </form>
+        </Card>
       </div>
     </div>
   );
