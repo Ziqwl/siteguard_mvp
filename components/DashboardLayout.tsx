@@ -86,14 +86,19 @@ export function DashboardLayout({
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
-      <div className={`
-        fixed inset-y-0 left-0 z-50 w-16 sm:w-64
-        glass-strong border-r border-white/20 
-        transform transition-transform duration-300 ease-in-out
-        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-        lg:translate-x-0 lg:static lg:inset-0
-        bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
-      `}>
+      <div 
+        id="sidebar-navigation"
+        className={`
+          fixed inset-y-0 left-0 z-50 w-16 sm:w-64
+          glass-strong border-r border-white/20 
+          transform transition-transform duration-300 ease-in-out
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+          lg:translate-x-0 lg:static lg:inset-0
+          bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
+        `}
+        role="navigation"
+        aria-label="Main navigation"
+      >
         <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
@@ -127,6 +132,8 @@ export function DashboardLayout({
                     key={index}
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
+                    aria-label={item.disabled ? `${item.label} - Coming soon` : item.label}
+                    aria-current={currentScreen === item.screen ? 'page' : undefined}
                     className={`
                       w-full flex items-center gap-3 lg:gap-4 px-3 sm:px-5 lg:px-6 py-3 sm:py-5 lg:py-6 
                       rounded-2xl text-left transition-all duration-200 ease-out
@@ -189,6 +196,9 @@ export function DashboardLayout({
                 size="sm"
                 className="lg:hidden text-white/70 hover:text-white touch-manipulation"
                 onClick={() => setSidebarOpen(true)}
+                aria-label="Open navigation menu"
+                aria-expanded={sidebarOpen}
+                aria-controls="sidebar-navigation"
               >
                 <Menu className="h-5 w-5" />
               </Button>

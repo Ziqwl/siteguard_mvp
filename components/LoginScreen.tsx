@@ -120,7 +120,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
             </CardHeader>
             
             <CardContent>
-              <form onSubmit={handleLogin} className="space-y-5 lg:space-y-6">
+              <form onSubmit={handleLogin} className="space-y-5 lg:space-y-6" role="form" aria-label="Sign in form">
                 {/* Email Field */}
                 <div className="space-y-2">
                   <Label htmlFor="email" className="text-white font-medium">Username or Email</Label>
@@ -134,6 +134,8 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       placeholder="your@email.com or username"
                       className="pl-10 h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
+                      aria-required="true"
+                      aria-describedby="email-error"
                     />
                   </div>
                 </div>
@@ -151,6 +153,8 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       placeholder="Enter your password"
                       className="pl-10 pr-12 h-11 bg-gray-800/50 border-gray-600 text-white placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500"
                       disabled={isLoading}
+                      aria-required="true"
+                      aria-describedby="password-error"
                     />
                     <Button
                       type="button"
@@ -159,6 +163,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                       onClick={() => setShowPassword(!showPassword)}
                       className="absolute right-1 top-1/2 transform -translate-y-1/2 h-10 w-10 p-0 text-white/50 hover:text-white hover:bg-white/10"
                       disabled={isLoading}
+                      aria-label={showPassword ? 'Hide password' : 'Show password'}
                     >
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </Button>

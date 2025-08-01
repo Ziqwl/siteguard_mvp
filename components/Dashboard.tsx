@@ -114,15 +114,16 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
           {/* Quick Actions */}
           <div className="w-full my-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
             <div className="flex flex-col xs:flex-row gap-3 flex-1">
-              <Button
-                variant="outline"
-                onClick={handleRefresh}
-                disabled={isRefreshing}
-                className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200 min-h-[44px]"
-              >
-                <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-                {isRefreshing ? 'Refreshing...' : 'Refresh'}
-              </Button>
+                          <Button
+              variant="outline"
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+              aria-label={isRefreshing ? 'Refreshing dashboard data' : 'Refresh dashboard data'}
+              className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200 min-h-[44px]"
+            >
+              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+              {isRefreshing ? 'Refreshing...' : 'Refresh'}
+            </Button>
             </div>
             
             <div className="text-sm font-medium text-gray-300 text-center sm:text-right">
@@ -138,6 +139,15 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               className="card group cursor-pointer hover:scale-[1.02] transition-all duration-200 w-full sm:w-1/3 aspect-[3/2]"
               style={{ animationDelay: `${index * 100}ms` }}
               onClick={metric.onClick}
+              role="button"
+              tabIndex={0}
+              aria-label={`${metric.title}: ${metric.value} - Click to view details`}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  metric.onClick();
+                }
+              }}
             >
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium text-white">
@@ -241,6 +251,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                 variant="outline"
                 size="sm"
                 onClick={() => onNavigate('alerts')}
+                aria-label="View all alerts and notifications"
                 className="btn-secondary w-full mt-4 hover:bg-gray-800/50 hover:border-gray-500 hover:text-white transition-all duration-200 hover:shadow-md"
               >
                 View All Alerts
