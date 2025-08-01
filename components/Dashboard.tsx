@@ -110,8 +110,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="space-y-6 lg:space-y-8">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 lg:space-y-8">
           {/* Quick Actions */}
           <div className="w-full my-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
             <div className="flex flex-col xs:flex-row gap-3 flex-1">
