@@ -110,35 +110,36 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="space-y-6 lg:space-y-8">
-        {/* Quick Actions */}
-        <div className="w-full my-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
-          <div className="flex flex-col xs:flex-row gap-3 flex-1">
-            <Button
-              variant="outline"
-              onClick={handleRefresh}
-              disabled={isRefreshing}
-              className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200 min-h-[44px]"
-            >
-              <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
-              {isRefreshing ? 'Refreshing...' : 'Refresh'}
-            </Button>
-          </div>
-          
-          <div className="text-sm font-medium text-gray-300 text-center sm:text-right">
-            Last updated: {new Date().toLocaleTimeString()}
-          </div>
-        </div>
-
-                {/* Metrics Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 w-full">
-          {metrics.map((metric, index) => (
-                          <Card 
-                key={index} 
-                className="card group cursor-pointer hover:scale-[1.02] transition-all duration-200 w-full"
-                style={{ animationDelay: `${index * 100}ms` }}
-                onClick={metric.onClick}
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="space-y-6 lg:space-y-8">
+          {/* Quick Actions */}
+          <div className="w-full my-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
+            <div className="flex flex-col xs:flex-row gap-3 flex-1">
+              <Button
+                variant="outline"
+                onClick={handleRefresh}
+                disabled={isRefreshing}
+                className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200 min-h-[44px]"
               >
+                <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                {isRefreshing ? 'Refreshing...' : 'Refresh'}
+              </Button>
+            </div>
+            
+            <div className="text-sm font-medium text-gray-300 text-center sm:text-right">
+              Last updated: {new Date().toLocaleTimeString()}
+            </div>
+          </div>
+
+          {/* Metrics Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {metrics.map((metric, index) => (
+            <Card 
+              key={index} 
+              className="card group cursor-pointer hover:scale-[1.02] transition-all duration-200 w-full sm:w-1/3 aspect-[3/2]"
+              style={{ animationDelay: `${index * 100}ms` }}
+              onClick={metric.onClick}
+            >
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
                 <CardTitle className="text-sm font-medium text-white">
                   {metric.title}
@@ -163,8 +164,8 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
           ))}
         </div>
 
-        {/* Quick Stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
+          {/* Quick Stats */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
           <Card className="card" style={{ animationDelay: '500ms' }}>
             <CardHeader className="pb-3">
               <CardTitle className="text-white text-lg">Quick Stats</CardTitle>

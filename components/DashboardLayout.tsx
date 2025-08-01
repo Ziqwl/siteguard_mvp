@@ -86,22 +86,22 @@ export function DashboardLayout({
   return (
     <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
-              <div className={`
-                fixed inset-y-0 left-0 z-50 w-64 sm:w-72 lg:w-80 xl:w-96
-                glass-strong border-r border-white/20 
-                transform transition-transform duration-300 ease-in-out
-                ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
-                lg:translate-x-0 lg:static lg:inset-0
-                bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
-              `}>
+      <div className={`
+        fixed inset-y-0 left-0 z-50 w-16 sm:w-64
+        glass-strong border-r border-white/20 
+        transform transition-transform duration-300 ease-in-out
+        ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+        lg:translate-x-0 lg:static lg:inset-0
+        bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
+      `}>
         <div className="flex flex-col h-full">
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-                           <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
-               <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-indigo-400" />
+              <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
+                <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-indigo-400" />
               </div>
-              <div>
+              <div className="hidden sm:block">
                 <h1 className="font-bold text-white text-lg lg:text-xl">SiteGuard</h1>
                 <p className="text-xs lg:text-sm text-white/60">Security Dashboard</p>
               </div>
@@ -127,21 +127,21 @@ export function DashboardLayout({
                     key={index}
                     onClick={() => !item.disabled && handleNavigation(item.screen)}
                     disabled={item.disabled}
-                                                                className={`
-                        w-full flex items-center gap-3 lg:gap-4 px-5 lg:px-6 py-5 lg:py-6 
-                        rounded-2xl text-left transition-all duration-200 ease-out
-                        touch-manipulation min-h-[56px] lg:min-h-[60px]
-                        ${item.disabled 
-                          ? 'text-white/30 cursor-not-allowed opacity-50' 
-                          : currentScreen === item.screen 
-                                                        ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
-                              : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
-                        }
-                      `}
-                      title={item.disabled ? "Coming in Q4 2025" : undefined}
+                    className={`
+                      w-full flex items-center gap-3 lg:gap-4 px-3 sm:px-5 lg:px-6 py-3 sm:py-5 lg:py-6 
+                      rounded-2xl text-left transition-all duration-200 ease-out
+                      touch-manipulation min-h-[56px] lg:min-h-[60px]
+                      ${item.disabled 
+                        ? 'text-white/30 cursor-not-allowed opacity-50' 
+                        : currentScreen === item.screen 
+                          ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
+                          : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
+                      }
+                    `}
+                    title={item.disabled ? "Coming in Q4 2025" : undefined}
                   >
-                                          <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                      <span className="font-medium text-sm lg:text-base">{item.label}</span>
+                    <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
+                    <span className="hidden sm:inline font-medium text-sm lg:text-base">{item.label}</span>
                   </button>
                 );
 
@@ -240,9 +240,7 @@ export function DashboardLayout({
 
         {/* Page Content */}
         <main className="flex-1 overflow-auto">
-          <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {children}
-          </div>
+          {children}
         </main>
 
         {/* Mobile bottom navigation for quick access */}

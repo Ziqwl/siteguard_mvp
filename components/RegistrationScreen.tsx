@@ -205,6 +205,3 @@ export function RegistrationScreen({ onNavigate, onToggleTheme, isDarkMode }: Re
     </div>
   );
 }
-    </div>
-  );
-}
