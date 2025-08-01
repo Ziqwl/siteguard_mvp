@@ -78,30 +78,22 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   };
 
   return (
-    <div className="min-h-screen flex flex-col lg:flex-row bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
-      {/* Left side - Branding (hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 xl:w-3/5 p-8 xl:p-12 items-center justify-center relative overflow-hidden">
-        <div className="relative z-10 max-w-md text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 xl:w-20 xl:h-20 rounded-xl xl:rounded-2xl bg-indigo-500/10 ring-1 ring-indigo-500/20 mb-8">
-            <Shield className="w-8 h-8 xl:w-10 xl:h-10 text-indigo-400" />
-          </div>
-          
-          <h1 className="text-2xl xl:text-3xl font-bold text-white mb-4">
-            Welcome to SiteGuard
-          </h1>
-          
-          <p className="text-base xl:text-lg text-gray-400 mb-8">
-            Comprehensive website security monitoring and threat detection platform
-          </p>
-        </div>
-      </div>
-
-      {/* Right side - Login Form */}
-      <div className="flex-1 flex items-center justify-center p-6 sm:p-8 lg:p-12">
-        <div className="w-full max-w-md mx-auto space-y-6 lg:space-y-8">
-          {/* Theme toggle */}
-          <div className="flex justify-end">
-            <div className="flex items-center gap-2 lg:gap-3">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950 py-8 px-4">
+      {/* Centered Login Form */}
+      <div className="w-full max-w-md mx-auto space-y-6">
+          {/* Header with Logo and Theme Toggle */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
+                <Shield className="h-6 w-6 text-indigo-400" />
+              </div>
+              <div>
+                <h1 className="font-bold text-white text-lg">SiteGuard</h1>
+                <p className="text-xs text-gray-400">Security Dashboard</p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-2">
               <Switch 
                 id="theme-toggle" 
                 checked={isDarkMode} 
@@ -109,34 +101,22 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
               />
               <Label 
                 htmlFor="theme-toggle" 
-                className="text-sm text-white/70 flex items-center gap-2 cursor-pointer"
+                className="text-sm text-gray-400 flex items-center gap-2 cursor-pointer"
               >
                 {isDarkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-                <span className="hidden sm:inline">
-                  {isDarkMode ? 'Dark' : 'Light'}
-                </span>
               </Label>
             </div>
-          </div>
-
-          {/* Mobile branding */}
-          <div className="text-center lg:hidden">
-                      <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-indigo-500/10 ring-1 ring-indigo-500/20 mb-4">
-            <Shield className="w-8 h-8 text-indigo-400" />
-            </div>
-            <h1 className="text-2xl font-bold text-white mb-2">SiteGuard</h1>
-            <p className="text-gray-400">Secure your digital presence</p>
           </div>
 
           {/* Login Card */}
           <Card className="card">
             <CardHeader className="space-y-2 pb-6">
-                        <CardTitle className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-center">
-            Sign In
-          </CardTitle>
-          <CardDescription className="text-gray-300 text-center text-base sm:text-lg leading-relaxed">
-            Access your security dashboard
-          </CardDescription>
+              <CardTitle className="form-title text-white text-center">
+                Sign In
+              </CardTitle>
+              <CardDescription className="text-gray-300 text-center text-base leading-relaxed">
+                Access your security dashboard
+              </CardDescription>
             </CardHeader>
             
             <CardContent>
@@ -185,39 +165,35 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
                   </div>
                 </div>
 
-                {/* Submit Button */}
-                <Button
-                  type="submit"
-                  disabled={isLoading}
-                  className="btn-primary w-full min-h-[44px] text-base font-semibold"
-                >
-                  {isLoading ? (
-                    <>
-                      <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
-                      Signing in...
-                    </>
-                  ) : (
-                    <>
-                      Sign In
-                      <ArrowRight className="h-4 w-4" />
-                    </>
-                  )}
-                </Button>
-
-                {/* Register Link */}
-                <div className="text-center pt-4 border-t border-white/10">
-                  <p className="text-white/70 text-sm">
-                    Don't have an account?{' '}
-                    <Button
-                      type="button"
-                      variant="ghost"
-                      onClick={() => onNavigate('register')}
-                      className="text-primary hover:text-primary/80 hover:bg-primary/10 p-0 h-auto font-semibold"
-                      disabled={isLoading}
-                    >
-                      Create one here
-                    </Button>
-                  </p>
+                {/* Action Buttons */}
+                <div className="space-y-3">
+                  <Button
+                    type="submit"
+                    disabled={isLoading}
+                    className="btn-primary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
+                  >
+                    {isLoading ? (
+                      <>
+                        <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+                        Signing in...
+                      </>
+                    ) : (
+                      <>
+                        Sign In
+                        <ArrowRight className="h-4 w-4" />
+                      </>
+                    )}
+                  </Button>
+                  
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => onNavigate('register')}
+                    disabled={isLoading}
+                    className="btn-secondary w-full min-h-[44px] px-4 py-2 text-base font-semibold"
+                  >
+                    Register
+                  </Button>
                 </div>
               </form>
             </CardContent>

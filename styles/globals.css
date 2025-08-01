@@ -499,6 +499,12 @@ html {
     min-width: var(--touch-target-small);
   }
   
+  .form-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--foreground);
+  }
+  
   /* Mobile-specific utilities */
   .mobile-padding {
     padding: var(--mobile-padding);
