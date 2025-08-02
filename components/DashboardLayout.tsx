@@ -83,18 +83,18 @@ export function DashboardLayout({
     }
   };
 
-  return (
-    <div className="min-h-screen flex bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
+    return (
+    <div className="page-container bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
       {/* Sidebar */}
-      <div 
+      <div
         id="sidebar-navigation"
         className={`
           fixed inset-y-0 left-0 z-50 w-16 sm:w-64
-          glass-strong border-r border-white/20 
+          card border-r border-border-primary
           transform transition-transform duration-300 ease-in-out
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} 
+          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           lg:translate-x-0 lg:static lg:inset-0
-          bg-gradient-to-b from-gray-950/95 via-gray-900/95 to-gray-950/95
+          bg-gradient-to-b from-bg-primary/95 via-bg-secondary/95 to-bg-primary/95
         `}
         role="navigation"
         aria-label="Main navigation"
@@ -103,9 +103,9 @@ export function DashboardLayout({
           {/* Logo Section */}
           <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
             <div className="flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-indigo-500/20 ring-1 ring-indigo-500/30">
-                <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-indigo-400" />
-              </div>
+                                  <div className="p-2 rounded-xl bg-primary-blue/20 ring-1 ring-primary-blue/30">
+                      <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-primary-blue" />
+                    </div>
               <div className="hidden sm:block">
                 <h1 className="font-bold text-white text-lg lg:text-xl">SiteGuard</h1>
                 <p className="text-xs lg:text-sm text-white/60">Security Dashboard</p>
@@ -134,15 +134,15 @@ export function DashboardLayout({
                     disabled={item.disabled}
                     aria-label={item.disabled ? `${item.label} - Coming soon` : item.label}
                     aria-current={currentScreen === item.screen ? 'page' : undefined}
-                    className={`
-                      w-full flex items-center gap-3 lg:gap-4 px-3 sm:px-5 lg:px-6 py-3 sm:py-5 lg:py-6 
-                      rounded-2xl text-left transition-all duration-200 ease-out
+                                        className={`
+                      w-full flex items-center gap-3 lg:gap-4 px-3 sm:px-5 lg:px-6 py-3 sm:py-5 lg:py-6
+                      rounded-xl text-left transition-all duration-200 ease-out
                       touch-manipulation min-h-[56px] lg:min-h-[60px]
-                      ${item.disabled 
-                        ? 'text-white/30 cursor-not-allowed opacity-50' 
-                        : currentScreen === item.screen 
-                          ? 'bg-gradient-to-r from-indigo-500/20 to-purple-500/20 text-white border border-indigo-500/30 shadow-md shadow-indigo-500/10 backdrop-blur-sm' 
-                          : 'text-white/80 hover:text-white hover:bg-gradient-to-r hover:from-indigo-500/8 hover:to-purple-500/12 hover:shadow-md hover:shadow-indigo-500/10 hover:backdrop-blur-sm'
+                      ${item.disabled
+                        ? 'text-text-disabled cursor-not-allowed opacity-50'
+                        : currentScreen === item.screen
+                          ? 'bg-gradient-to-r from-primary-blue/20 to-primary-purple/20 text-text-primary border border-primary-blue/30 shadow-md shadow-primary-blue/10 backdrop-blur-sm'
+                          : 'text-text-secondary hover:text-text-primary hover:bg-gradient-to-r hover:from-primary-blue/8 hover:to-primary-purple/12 hover:shadow-md hover:shadow-primary-blue/10 hover:backdrop-blur-sm'
                       }
                     `}
                     title={item.disabled ? "Coming in Q4 2025" : undefined}
@@ -248,10 +248,12 @@ export function DashboardLayout({
           </div>
         </header>
 
-        {/* Page Content */}
-        <main className="flex-1 overflow-auto">
-          {children}
-        </main>
+                            {/* Page Content */}
+                    <main className="main-content">
+                      <div className="content-wrapper">
+                        {children}
+                      </div>
+                    </main>
 
         {/* Mobile bottom navigation for quick access */}
         {isMobile && (

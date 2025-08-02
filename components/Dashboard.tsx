@@ -110,7 +110,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
     >
-      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-6 lg:space-y-8">
+      <div className="space-y-6 lg:space-y-8">
           {/* Quick Actions */}
           <div className="w-full my-4 flex flex-col sm:flex-row gap-4 items-stretch sm:items-center justify-between">
             <div className="flex flex-col xs:flex-row gap-3 flex-1">
@@ -119,14 +119,14 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               onClick={handleRefresh}
               disabled={isRefreshing}
               aria-label={isRefreshing ? 'Refreshing dashboard data' : 'Refresh dashboard data'}
-              className="btn-secondary hover:bg-gray-800/50 hover:border-gray-500 transition-colors duration-200 min-h-[44px]"
+              className="btn btn-secondary"
             >
               <RefreshCw className={`h-4 w-4 ${isRefreshing ? 'animate-spin' : ''}`} />
               {isRefreshing ? 'Refreshing...' : 'Refresh'}
             </Button>
             </div>
             
-            <div className="text-sm font-medium text-gray-300 text-center sm:text-right">
+            <div className="text-sm font-medium text-text-secondary text-center sm:text-right">
               Last updated: {new Date().toLocaleTimeString()}
             </div>
           </div>
@@ -150,21 +150,21 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
               }}
             >
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
-                <CardTitle className="text-sm font-medium text-white">
+                <CardTitle className="text-sm font-medium text-text-primary">
                   {metric.title}
                 </CardTitle>
-                <div className="p-3 rounded-lg bg-gray-800/50">
+                <div className="p-3 rounded-lg bg-bg-secondary">
                   <metric.icon className={`h-5 w-5 ${metric.color}`} />
                 </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-baseline gap-2">
-                  <div className="text-2xl font-bold text-white">
+                  <div className="text-2xl font-bold text-text-primary">
                     {metric.value}
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-gray-400" />
+                  <ArrowUpRight className="h-4 w-4 text-text-muted" />
                 </div>
-                <div className="flex items-center gap-2 text-sm text-emerald-400 font-medium">
+                <div className="flex items-center gap-2 text-sm text-status-success font-medium">
                   <TrendingUp className="h-3 w-3" />
                   <span className="truncate">{metric.change} from last month</span>
                 </div>
@@ -177,74 +177,74 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full">
           <Card className="card" style={{ animationDelay: '500ms' }}>
             <CardHeader className="pb-3">
-              <CardTitle className="text-white text-lg">Quick Stats</CardTitle>
+              <CardTitle className="text-text-primary text-lg">Quick Stats</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Avg Response Time</span>
-                <span className="text-sm font-semibold text-white">125ms</span>
+                <span className="text-sm text-text-muted">Avg Response Time</span>
+                <span className="text-sm font-semibold text-text-primary">125ms</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Total Requests</span>
-                <span className="text-sm font-semibold text-white">2.4M</span>
+                <span className="text-sm text-text-muted">Total Requests</span>
+                <span className="text-sm font-semibold text-text-primary">2.4M</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Error Rate</span>
-                <span className="text-sm font-semibold text-emerald-400">0.02%</span>
+                <span className="text-sm text-text-muted">Error Rate</span>
+                <span className="text-sm font-semibold text-status-success">0.02%</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-400">Security Score</span>
-                <span className="text-sm font-semibold text-primary">A+</span>
+                <span className="text-sm text-text-muted">Security Score</span>
+                <span className="text-sm font-semibold text-primary-blue">A+</span>
               </div>
             </CardContent>
           </Card>
 
           <Card className="card" style={{ animationDelay: '600ms' }}>
             <CardHeader className="pb-3">
-              <CardTitle className="text-white text-lg">System Status</CardTitle>
+              <CardTitle className="text-text-primary text-lg">System Status</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                <span className="text-sm text-gray-400">All systems operational</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-blue-400"></div>
-                <span className="text-sm text-gray-400">Monitoring active</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary"></div>
-                <span className="text-sm text-gray-400">Security enabled</span>
+                                     <div className="w-2 h-2 rounded-full bg-status-success animate-pulse"></div>
+                       <span className="text-sm text-text-muted">All systems operational</span>
+                     </div>
+                     <div className="flex items-center gap-3">
+                       <div className="w-2 h-2 rounded-full bg-status-info"></div>
+                       <span className="text-sm text-text-muted">Monitoring active</span>
+                     </div>
+                     <div className="flex items-center gap-3">
+                       <div className="w-2 h-2 rounded-full bg-primary-blue"></div>
+                       <span className="text-sm text-text-muted">Security enabled</span>
               </div>
             </CardContent>
           </Card>
 
           <Card className="card" style={{ animationDelay: '700ms' }}>
             <CardHeader className="pb-3">
-              <CardTitle className="text-white text-lg">Recent Activity</CardTitle>
+              <CardTitle className="text-text-primary text-lg">Recent Activity</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {recentActivities.slice(0, 3).map((activity, index) => (
-                  <div 
-                    key={index} 
-                    className="flex items-start gap-3 p-2 rounded-lg hover:bg-gray-800/50 transition-colors cursor-pointer"
-                    onClick={() => onNavigate('alerts')}
-                  >
-                    <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
-                      activity.type === 'success' ? 'bg-emerald-400' :
-                      activity.type === 'warning' ? 'bg-amber-400' :
-                      'bg-blue-400'
-                    }`} />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm text-white hover:text-primary transition-colors">
-                        {activity.message}
-                      </p>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-xs text-gray-500">{activity.time}</span>
-                      </div>
-                    </div>
-                  </div>
+                                           <div
+                           key={index}
+                           className="flex items-start gap-3 p-2 rounded-lg hover:bg-bg-secondary transition-colors cursor-pointer"
+                           onClick={() => onNavigate('alerts')}
+                         >
+                           <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
+                             activity.type === 'success' ? 'bg-status-success' :
+                             activity.type === 'warning' ? 'bg-status-warning' :
+                             'bg-status-info'
+                           }`} />
+                           <div className="flex-1 min-w-0">
+                             <p className="text-sm text-text-primary hover:text-primary-blue transition-colors">
+                               {activity.message}
+                             </p>
+                             <div className="flex items-center gap-2 mt-1">
+                               <span className="text-xs text-text-disabled">{activity.time}</span>
+                             </div>
+                           </div>
+                         </div>
                 ))}
               </div>
               <Button
@@ -252,7 +252,7 @@ export function Dashboard({ onNavigate, onToggleTheme, isDarkMode, currentScreen
                 size="sm"
                 onClick={() => onNavigate('alerts')}
                 aria-label="View all alerts and notifications"
-                className="btn-secondary w-full mt-4 hover:bg-gray-800/50 hover:border-gray-500 hover:text-white transition-all duration-200 hover:shadow-md"
+                className="btn btn-secondary w-full mt-4"
               >
                 View All Alerts
               </Button>
