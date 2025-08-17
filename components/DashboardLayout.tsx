@@ -28,265 +28,84 @@ import {
 import { AppScreen } from '../App';
 
 interface DashboardLayoutProps {
-  children: React.ReactNode;
   title: string;
-  description?: string;
+  description: string;
   currentScreen: AppScreen;
   onNavigate: (screen: AppScreen) => void;
   onToggleTheme: () => void;
   isDarkMode: boolean;
+  children: React.ReactNode;
 }
 
-export function DashboardLayout({ 
-  children, 
-  title, 
-  description, 
-  currentScreen, 
-  onNavigate, 
-  onToggleTheme, 
-  isDarkMode 
-}: DashboardLayoutProps) {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024);
-      if (window.innerWidth >= 1024) {
-        setSidebarOpen(false);
-      }
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-
-  const sidebarItems = [
-    { icon: BarChart3, label: 'Dashboard', screen: 'dashboard' as AppScreen, disabled: false },
-    { icon: Globe, label: 'Monitors', screen: 'monitors' as AppScreen, disabled: false },
-    { icon: Shield, label: 'Security', screen: 'security' as AppScreen, disabled: false },
-    { icon: AlertTriangle, label: 'Alerts', screen: 'alerts' as AppScreen, disabled: false },
-    { icon: Zap, label: 'Chaos Experiments', screen: 'chaos-experiments' as AppScreen, disabled: false },
-    { icon: Brain, label: 'AI Insights', screen: 'ai-insights' as AppScreen, disabled: false },
-    { icon: Users, label: 'Team', screen: 'team' as AppScreen, disabled: false },
-    { icon: Settings, label: 'Settings', screen: 'settings' as AppScreen, disabled: false },
-    { icon: Activity, label: 'AI Postmortems', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - AI-powered incident analysis' },
-    { icon: Shield, label: 'Drift Correction', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated security drift detection' },
-    { icon: Settings, label: 'Runbooks', screen: 'dashboard' as AppScreen, disabled: true, tooltip: 'Coming soon - Automated incident response playbooks' }
-  ];
-
-  const handleNavigation = (screen: AppScreen) => {
-    onNavigate(screen);
-    if (isMobile) {
-      setSidebarOpen(false);
-    }
-  };
-
-    return (
-    <div className="page-container bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950">
+export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
+  title,
+  description,
+  currentScreen,
+  onNavigate,
+  onToggleTheme,
+  isDarkMode,
+  children,
+}) => {
+  return (
+    <div className="flex h-screen">
       {/* Sidebar */}
-      <div
-        id="sidebar-navigation"
-        className={`
-          fixed inset-y-0 left-0 z-50 w-16 sm:w-64
-          card border-r border-border-primary
-          transform transition-transform duration-300 ease-in-out
-          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          lg:translate-x-0 lg:static lg:inset-0
-          bg-gradient-to-b from-bg-primary/95 via-bg-secondary/95 to-bg-primary/95
-        `}
-        role="navigation"
-        aria-label="Main navigation"
-      >
-        <div className="flex flex-col h-full">
-          {/* Logo Section */}
-          <div className="flex items-center justify-between p-4 lg:p-6 border-b border-white/10">
-            <div className="flex items-center gap-3">
-                                  <div className="p-2 rounded-xl bg-primary-blue/20 ring-1 ring-primary-blue/30">
-                      <Shield className="h-6 w-6 lg:h-7 lg:w-7 text-primary-blue" />
-                    </div>
-              <div className="hidden sm:block">
-                <h1 className="font-bold text-white text-lg lg:text-xl">SiteGuard</h1>
-                <p className="text-xs lg:text-sm text-white/60">Security Dashboard</p>
-              </div>
-            </div>
-            
-            {/* Mobile close button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="lg:hidden text-white/70 hover:text-white"
-              onClick={() => setSidebarOpen(false)}
-            >
-              <X className="h-5 w-5" />
-            </Button>
+      <div className="w-64 bg-gray-800 text-white p-4">
+        <div className="flex items-center mb-6">
+          <div className="p-2 rounded-xl bg-primary-blue/20 ring-1 ring-primary-blue/30">
+            <Shield className="h-6 w-6 text-primary-blue" />
           </div>
-          
-          {/* Navigation */}
-          <nav className="flex-1 p-3 lg:p-4 space-y-1 lg:space-y-2 overflow-y-auto">
-            <TooltipProvider>
-              {sidebarItems.map((item, index) => {
-                const buttonContent = (
-                  <button
-                    key={index}
-                    onClick={() => !item.disabled && handleNavigation(item.screen)}
-                    disabled={item.disabled}
-                    aria-label={item.disabled ? `${item.label} - Coming soon` : item.label}
-                    aria-current={currentScreen === item.screen ? 'page' : undefined}
-                                        className={`
-                      w-full flex items-center gap-3 lg:gap-4 px-3 sm:px-5 lg:px-6 py-3 sm:py-5 lg:py-6
-                      rounded-xl text-left transition-all duration-200 ease-out
-                      touch-manipulation min-h-[56px] lg:min-h-[60px]
-                      ${item.disabled
-                        ? 'text-text-disabled cursor-not-allowed opacity-50'
-                        : currentScreen === item.screen
-                          ? 'bg-gradient-to-r from-primary-blue/20 to-primary-purple/20 text-text-primary border border-primary-blue/30 shadow-md shadow-primary-blue/10 backdrop-blur-sm'
-                          : 'text-text-secondary hover:text-text-primary hover:bg-gradient-to-r hover:from-primary-blue/8 hover:to-primary-purple/12 hover:shadow-md hover:shadow-primary-blue/10 hover:backdrop-blur-sm'
-                      }
-                    `}
-                    title={item.disabled ? "Coming in Q4 2025" : undefined}
-                  >
-                    <item.icon className="h-5 w-5 lg:h-6 lg:w-6 flex-shrink-0" />
-                    <span className="hidden sm:inline font-medium text-sm lg:text-base">{item.label}</span>
-                  </button>
-                );
-
-                return item.disabled && item.tooltip ? (
-                  <Tooltip key={index}>
-                    <TooltipTrigger asChild>
-                      {buttonContent}
-                    </TooltipTrigger>
-                    <TooltipContent side="right" className="bg-slate-800 text-white border-white/20">
-                      <p>{item.tooltip}</p>
-                    </TooltipContent>
-                  </Tooltip>
-                ) : (
-                  <div key={index}>
-                    {buttonContent}
-                  </div>
-                );
-              })}
-            </TooltipProvider>
-          </nav>
-          
-          {/* Footer Section */}
-          <div className="p-3 lg:p-4 border-t border-white/10">
-            <Button
-              variant="ghost"
-              className="w-full justify-start text-white/70 hover:text-white hover:bg-white/5 min-h-[48px] lg:min-h-[52px] touch-manipulation"
-              onClick={() => onNavigate('login')}
-            >
-              <LogOut className="h-5 w-5 lg:h-6 lg:w-6 mr-3 lg:mr-4" />
-              <span className="text-sm lg:text-base">Sign Out</span>
-            </Button>
+          <div className="hidden sm:block ml-2">
+            <h1 className="font-bold text-text-primary text-lg">SiteGuard</h1>
+            <p className="text-xs text-text-muted">Security Dashboard</p>
           </div>
         </div>
+        {/* Navigation Links */}
+        <nav>
+          <ul>
+            <li className={currentScreen === 'dashboard' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('dashboard')}>Dashboard</Button>
+            </li>
+            <li className={currentScreen === 'monitors' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('monitors')}>Monitors</Button>
+            </li>
+            <li className={currentScreen === 'security' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('security')}>Security</Button>
+            </li>
+            <li className={currentScreen === 'alerts' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('alerts')}>Alerts</Button>
+            </li>
+            <li className={currentScreen === 'chaos-experiments' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('chaos-experiments')}>Chaos Experiments</Button>
+            </li>
+            <li className={currentScreen === 'ai-insights' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('ai-insights')}>AI Insights</Button>
+            </li>
+            <li className={currentScreen === 'team' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('team')}>Team</Button>
+            </li>
+            <li className={currentScreen === 'settings' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('settings')}>Settings</Button>
+            </li>
+            {/* Replace 'ai-postmortems' with a valid AppScreen value, e.g., 'ai-insights' */}
+            <li className={currentScreen === 'ai-insights' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('ai-insights')}>AI Postmortems</Button>
+            </li>
+            <li className={currentScreen === 'runbooks' ? 'bg-gray-700 rounded p-2' : ''}>
+              <Button onClick={() => onNavigate('runbooks')}>Drift Correction</Button>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      {/* Main Content */}
-      <div className="flex-1 flex flex-col min-w-0">
-        {/* Header */}
-        <header className="glass-strong border-b border-white/10 px-4 lg:px-6 py-4 lg:py-5">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3 lg:gap-4 min-w-0 flex-1">
-              {/* Mobile menu button */}
-              <Button
-                variant="ghost"
-                size="sm"
-                className="lg:hidden text-white/70 hover:text-white touch-manipulation"
-                onClick={() => setSidebarOpen(true)}
-                aria-label="Open navigation menu"
-                aria-expanded={sidebarOpen}
-                aria-controls="sidebar-navigation"
-              >
-                <Menu className="h-5 w-5" />
-              </Button>
-              
-              {/* Breadcrumb for mobile */}
-              {isMobile && currentScreen !== 'dashboard' && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white/70 hover:text-white touch-manipulation"
-                  onClick={() => onNavigate('dashboard')}
-                >
-                  <ChevronLeft className="h-4 w-4" />
-                </Button>
-              )}
-              
-              <div className="min-w-0 flex-1">
-                <h2 className="text-lg lg:text-xl xl:text-2xl font-semibold text-white truncate">
-                  {title}
-                </h2>
-                {description && (
-                  <p className="text-xs lg:text-sm text-white/60 truncate mt-1 lg:mt-0.5">
-                    {description}
-                  </p>
-                )}
-              </div>
-            </div>
-            
-            {/* Theme toggle */}
-            <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
-              <Switch 
-                id="theme-toggle" 
-                checked={isDarkMode} 
-                onCheckedChange={onToggleTheme}
-                className="touch-manipulation"
-              />
-              <Label 
-                htmlFor="theme-toggle" 
-                className="text-xs lg:text-sm text-white/70 flex items-center gap-1 lg:gap-2 cursor-pointer"
-              >
-                {isDarkMode ? <Moon className="h-4 w-4" /> : <Sun className="h-4 w-4" />}
-                <span className="hidden sm:inline">
-                  {isDarkMode ? 'Dark' : 'Light'}
-                </span>
-              </Label>
-            </div>
-          </div>
+      {/* Content Area */}
+      <div className="flex-1 p-6">
+        <header className="mb-6">
+          <h1 className="text-2xl font-bold">{title}</h1>
+          <p className="text-gray-400">{description}</p>
         </header>
-
-                            {/* Page Content */}
-                    <main className="main-content">
-                      <div className="content-wrapper">
-                        {children}
-                      </div>
-                    </main>
-
-        {/* Mobile bottom navigation for quick access */}
-        {isMobile && (
-          <div className="glass-strong border-t border-white/10 p-2">
-            <div className="flex justify-around">
-              {sidebarItems.slice(0, 4).map((item, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleNavigation(item.screen)}
-                  className={`
-                    flex flex-col items-center gap-1 p-2 rounded-lg transition-colors touch-manipulation
-                    ${currentScreen === item.screen 
-                      ? 'text-primary' 
-                      : 'text-white/60 hover:text-white'
-                    }
-                  `}
-                >
-                  <item.icon className="h-5 w-5" />
-                  <span className="text-xs font-medium">{item.label}</span>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        {children}
       </div>
-
-      {/* Mobile Sidebar Overlay */}
-      {sidebarOpen && (
-        <div 
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
     </div>
   );
 }
+

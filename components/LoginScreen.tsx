@@ -21,50 +21,11 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
   const [isLoading, setIsLoading] = useState(false);
   const { addToast } = useToast();
 
-  const handleLogin = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Enhanced validation
-    if (!email.trim()) {
-      addToast({
-        type: 'error',
-        title: 'Email required',
-        description: 'Please enter your email address'
-      });
-      return;
-    }
-    
-    if (!password.trim()) {
-      addToast({
-        type: 'error',
-        title: 'Password required',
-        description: 'Please enter your password'
-      });
-      return;
-    }
-    
-    setIsLoading(true);
-    
-    try {
-      // Simulate API call
-      console.log('Login attempt:', { email: email.trim(), password: '***' });
-      
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      addToast({
-        type: 'success',
-        title: 'Welcome back!',
-        description: 'Successfully signed in to SiteGuard'
-      });
-      onNavigate('dashboard');
-    } catch (error) {
-      addToast({
-        type: 'error',
-        title: 'Login failed',
-        description: 'Please check your credentials and try again'
-      });
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log('Form submitted:', email, password); // 添加日志输出
+    // 处理登录逻辑，例如设置 currentScreen 为 "dashboard"
+    onNavigate('dashboard');
   };
 
   return (
@@ -110,7 +71,7 @@ export function LoginScreen({ onNavigate, onToggleTheme, isDarkMode }: LoginScre
           </CardHeader>
           
           <CardContent>
-            <form onSubmit={handleLogin} className="space-y-5 lg:space-y-6" role="form" aria-label="Sign in form">
+            <form onSubmit={handleSubmit} className="space-y-5 lg:space-y-6" role="form" aria-label="Sign in form">
               {/* Email Field */}
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-text-primary font-medium">Email</Label>

@@ -16,12 +16,13 @@ import {
   Activity
 } from 'lucide-react';
 import { DashboardLayout } from './DashboardLayout';
+import { AppScreen } from '../App';
 
 interface ChaosExperimentsScreenProps {
-  onNavigate: (screen: string) => void;
+  onNavigate: (screen: AppScreen) => void;
   onToggleTheme: () => void;
   isDarkMode: boolean;
-  currentScreen: string;
+  currentScreen: AppScreen;
 }
 
 interface ChaosExperiment {
@@ -152,10 +153,12 @@ export const ChaosExperimentsScreen: React.FC<ChaosExperimentsScreenProps> = ({
 
   return (
     <DashboardLayout
+      title="Chaos Experiments"
+      description="Test your system resilience with controlled chaos experiments"
+      currentScreen={currentScreen}
       onNavigate={onNavigate}
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
-      currentScreen={currentScreen}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}

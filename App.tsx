@@ -41,6 +41,7 @@ function App() {
   }, []);
 
   const handleNavigation = (screen: AppScreen) => {
+    console.log(`Navigating to screen: ${screen}`); // 添加日志输出
     setCurrentScreen(screen);
   };
 

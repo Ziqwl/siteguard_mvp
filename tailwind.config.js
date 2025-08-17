@@ -1,17 +1,20 @@
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "./styles/**/*.{css,scss}"
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./App.tsx",
+    "./Dashboard.tsx"
   ],
   theme: {
     extend: {
       colors: {
-        border: 'rgb(228, 228, 231)', // You can adjust this to match your design system
-      },
+        'primary-blue': '#3b82f6',
+        'text-primary': '#f8fafc',
+        'text-secondary': '#94a3b8',
+        'text-muted': '#64748b'
+      }
     },
   },
-  plugins: []
-};
+  plugins: [],
+}

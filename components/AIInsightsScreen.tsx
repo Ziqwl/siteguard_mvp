@@ -18,12 +18,13 @@ import {
   ArrowDownRight
 } from 'lucide-react';
 import { DashboardLayout } from './DashboardLayout';
+import { AppScreen } from '../App';
 
 interface AIInsightsScreenProps {
-  onNavigate: (screen: string) => void;
+  onNavigate: (screen: AppScreen) => void;
   onToggleTheme: () => void;
   isDarkMode: boolean;
-  currentScreen: string;
+  currentScreen: AppScreen;
 }
 
 interface AIInsight {
@@ -165,10 +166,12 @@ export const AIInsightsScreen: React.FC<AIInsightsScreenProps> = ({
 
   return (
     <DashboardLayout
+      title="AI Insights"
+      description="AI-powered analysis and recommendations for your website performance and security"
+      currentScreen={currentScreen}
       onNavigate={onNavigate}
       onToggleTheme={onToggleTheme}
       isDarkMode={isDarkMode}
-      currentScreen={currentScreen}
     >
       <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
         {/* Header */}

@@ -8,14 +8,21 @@
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["monitoring", "security", "api", "express"],
+  "keywords": [
+    "monitoring",
+    "security",
+    "api",
+    "express"
+  ],
   "author": "SiteGuard Team",
   "license": "MIT",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "express": "^4.18.2",
-    "cors": "^2.8.5"
+    "http-proxy-middleware": "^3.0.5"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
   }
-} 
+}
